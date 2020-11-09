@@ -11,13 +11,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
-    <!-- Optional styles and scripts of your own -->
+    <!-- Firebase CSS for Authentication UI     -->
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
 
+    <!-- Optional CSS of your own               -->
+    <link type="text/css" rel="stylesheet" href="/COMP1800Group16App/styles/app.css" />
 </head>
 
 <body>
-    <h1>Hello World, this is our Main</h1>
-    <h1>Welcome to Rich's Paninis, you are now logged in!</h1>
+
     <!-------------------------------------->
     <!-- The following is HTML for layout -->
     <!-------------------------------------->
@@ -30,10 +32,10 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">my data</a>
+                    <a class="nav-link" href="#">my data</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.html">my profile</a>
+                    <a class="nav-link" href="#">my profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="login.html">login/signup</a>
@@ -41,10 +43,13 @@
             </ul>
         </div>
     </nav>
-
-    <!----------------------------------------------->
-    <!-- JS: Boostrap, Firebase, API related    -->
-    <!----------------------------------------------->
+    <h1> hello, welcome to the main page of Gorup16WebApp<h1></h1>
+    <h1>This is your quote of the day: <span id="abc"> blah blah blah</span> </h1>
+    </h1>
+    <!-------------------------------------------->
+    <!-- The following is JS for functionality  -->
+    <!-------------------------------------------->
+    <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
@@ -55,9 +60,18 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-    <!--------------------------------------------------------------------->
-    <!-- JS files: Your own JavaScript functions included here    -->
-    <!--------------------------------------------------------------------->
+    <!-- Firebase libraries from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    
+    <!-- Your own Firebase API key information -->
+    <script src="/COMP1800Group16App/scripts/firebase_api_group16.js"> </script>
+
+    <!-- Your own JavaScript functions included here    -->
+    <script src="/COMP1800Group16App/scripts/app.js"> </script>
 
 </body>
+
 </html>
