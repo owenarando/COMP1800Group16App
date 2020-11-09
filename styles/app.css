@@ -1,1 +1,54 @@
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
 
+.container-login {
+    width: 100%;
+
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #f2f2f2;
+}
+
+.wrap-login {
+    min-height: 680px;
+    background: black;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 5% 5% 5% 5%;
+
+    /* box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1); */
+}
+
+#firebaseui-auth-container{
+    margin-top: 2em;
+}
+
+
+.welcomeMsg {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 1.5em;
+}
+
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    margin-top: 10em;
+
+}

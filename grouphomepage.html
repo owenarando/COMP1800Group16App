@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Optional styles and scripts of your own -->
+  <style>
+  @import url(https://fonts.googleapis.com/css?family=Hind);
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    #content {
+      height: 700px;
+      background: black;
+      width: 100vw;
+    }
+
+    #title {
+      width: 100%;
+      height: 7.5%;
+      background-color: rgba(255, 249, 249, 0.0500);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 100%;
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3rem;
+    }
+
+    #middleContent {
+      height: 80%;
+      
+    }
+
+    .gridcontainer {
+      display: grid;
+      grid-gap: 9px;
+      background-color: rgba(255, 249, 249, 0.050);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: minmax(75px, auto);
+      grid-template-areas:
+        "header"
+        "box1"
+        "box2"
+        "box3"  
+
+    }
+
+    .header h2{ 
+      font-size: 2.5rem;
+    }
+    .header {
+      background-color: rgba(255, 249, 249, 0.111);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      text-align: center;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .box1 {
+      background-color: rgba(255, 249, 249, 0.111);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box2 {
+      background-color: rgba(255, 249, 249, 0.111);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 4;
+      grid-row-end: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+
+    }
+
+    .box3 {
+      background-color: rgba(255, 249, 249, 0.111);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 5;
+      grid-row-end: 6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+      
+      .newgrid {
+      display: grid;
+      margin-top: 10%;
+      background-color: rgba(255, 249, 249, 0.050);
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-auto-rows: minmax(75px, auto);
+      grid-template-areas:
+          "box4"
+
+
+    }
+
+    .box4 {
+      background-color: rgba(255, 249, 249, 0.111);
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    footer {
+      height: 12.5%;
+      background-color: rgba(255, 249, 249, 0.100);
+      position: relative;
+    }
+
+    nav {
+      height: 75%;
+      width: 97.5%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+      
+      .threadbuttons {
+         height: 100%;
+          width:100%;
+          background-color: rgba(255, 249, 249, 0.111);
+          color: white;
+          font-size: 2.14rem;
+      }
+      
+  </style>
+</head>
+
+<body>
+
+  <div id="content">
+    <header id="title">
+      <h1>GROUP&nbsp;TITLE</h1>
+    </header>
+    <section id="middleContent">
+
+      <div class="gridcontainer">
+
+        <div class="header">
+          <h2>GROUP&nbsp;DESCRIPTION</h2>
+        </div>
+
+        <div class="box1">
+          <button class= "threadbuttons">Thread</button>
+        </div>
+
+        <div class="box2">
+            <button class="threadbuttons">Thread</button>
+        </div>
+
+        <div class="box3">
+          <button class="threadbuttons">Thread</button>
+        </div>
+
+      </div>
+        
+        
+        <div class= "newgrid">
+         <div class="box4">
+             <button class="threadbuttons">CREATE&nbsp;THREAD</button>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+      <!-- Header Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="">myApp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">my data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">my profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">login/signup</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </div>
+
+
+
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+
+</body>
+
+</html>
