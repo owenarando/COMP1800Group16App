@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+
+* {
+    background: black;
+    color:#a9a9a9;
+    min-width: 350px;
+}
+
+.container {
+    width: 80%;
+    padding: 1em;
+    border: 2px solid darkgrey;
+    border-radius: 5%;
+    margin-top: 2%;
+}
+
+textarea {
+    height:24em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+button{
+    height: 90%;
+    width: 80.5%;
+    background-color:  hsl(267, 95%, 76%);
+    color: hsl(0, 0%, 7%);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    display: table-column;
+    margin-top: 5%;
+    
+}
+
+#cancel{
+    margin-top: 0.2em;
+}
