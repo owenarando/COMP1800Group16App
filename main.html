@@ -47,9 +47,34 @@
     <!-- Heading new added-->
     <h1> Welcome to the main page</h1>
     <h1> this is your quote of the day: <span id="a"> blah blah blah </span></h1>
+    
+    <button onclick="addCities()">Submit</button>
 
     <!-------------------------------------------->
     <!-- The following is JS for functionality  -->
+
+
+    <!-- Prepare DOM-->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" id="DC">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that ocupies</p>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" id="BJ">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that ocupies</p>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4" id="LA">Fluid jumbotron</h1>
+            <p class="lead">This is a modified jumbotron that ocupies</p>
+        </div>
+    </div>
+
+
     <!-------------------------------------------->
     <!-- Bootstrap libraries from CDN -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -67,13 +92,21 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
-    
+
     <!-- Your own Firebase API key information -->
     <script src="scripts/firebaseApi.js"> </script>
 
     <!-- Your own JavaScript functions included here    -->
     <script src="scripts/login.js"> </script>
+    <script src="scripts/app.js"> </script>
 
+
+    <script>
+        readQuote();
+        addCities();
+        getCities();
+        getCity();
+    </script>
 </body>
 
 </html>
