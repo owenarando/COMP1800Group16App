@@ -4,7 +4,7 @@ function addListener() {
   document.getElementById("object").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    //Getting the html elements from threadCreation.html
+    //Making references to the html elements from threadCreation.html
     var title = document.getElementById("inputTitle").value;
     var body = document.getElementById("inputBody").value;
 
