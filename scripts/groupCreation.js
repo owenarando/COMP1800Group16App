@@ -9,7 +9,7 @@ function addListener() {
     var body = document.getElementById("inputBody").value;
 
     //Navigating to the thread in database
-    db.collection("group").doc("FeQvXsEC226j9IJegGRb").collection("thread")
+    db.collection("group")
       .add({
         "title": title,
         "description": body
