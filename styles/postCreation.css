@@ -91,7 +91,7 @@ form{
   height: 15%;
   resize: none;
   top: 10%;
-  background-color: var(--level2);
+  background-color: var(--level1);
   border: none;
   color:white;
 }
@@ -100,7 +100,7 @@ form{
   height: 15%;
   resize: none;
   top: 28%;
-  background-color: var(--level2);
+  background-color: var(--level1);
   border: none;
   color:white;
 }
@@ -109,7 +109,7 @@ form{
   height: 59%;
   resize: none;
   top: 68%;
-  background-color: var(--level2);
+  background-color: var(--level1);
   border: none;
   color:white;
 }
