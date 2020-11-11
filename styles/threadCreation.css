@@ -33,20 +33,37 @@
 }
 
 
+
+
 /***CLASSES WITH MULTIPLE ELEMENTS***/
 .object{
   border-radius: 0.25rem;
   box-shadow: 0 0 8px  #000000;
 }
+/*FLEXBOX FOR ALIGNING/CENTERING CHILDREN*/
 .centerFlex{
   display: flex;
   align-items: center;
   justify-content: center;
 }
+/*ALIGNING/CENTERING TEXT INPUTS*/
+.centerPosition{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*TEXT INPUT TEXT PROPERTIIES*/
+.textInput{
+  text-align: center;
+  font-size: 2rem;
+}
+
+
 
 
 /***THE TITLE BOX***/
-#title {
+#pageTitle {
   width: 100%;
   height: 8%;
   background-color: var(--level1);
@@ -59,81 +76,79 @@ h1 {
 
 
 
-/***THE DESCTIPTION BOX***/
-#descriptionContain{
-  width: 100%;
-  height: 12.5%;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-  background-color: var(--level1);
-}
-#descriptionWrap{
-  width: 95%;
-  height: 90%;
-  overflow: auto;
-}
-#description{
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-}
 
-
-/***THE GRID IN THE MIDDLE***/
-#middleContent {
-  height: 45%;
-  width: 100%;
+/***THE FORM***/
+form{
   background-color: var(--level1);
-  display: grid;
-  grid-auto-rows: 10vh;
-  row-gap: 1rem;
-  place-items: center;
-  overflow: auto;
-  
+  width: 100%;
+  height: 60%;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  position: relative;
 }
-/*THE GRID BUTTONS*/
-#gridItem{
-  width: 95%;
-  height: 90%;
+#inputTitle{
+  width: 97.5%;
+  height: 15%;
+  resize: none;
+  top: 10%;
   background-color: var(--level2);
   border: none;
-  grid-row: span 1;
-  color: white;
-  font-size: 2rem;
+  color:white;
+} 
+
+#inputBody{
+  width: 97.5%;
+  height: 77%;
+  resize: none;
+  top: 59%;
+  background-color: var(--level2);
+  border: none;
+  color:white;
 }
+
 
 
 
 /***THE ACTION BOX***/
 #actionBox{
-  height: 16%;
+  height: 12%;
   width: 100%;
   margin-top: 2vh;
   margin-bottom: 2vh;
   background-color: var(--level1);
+  justify-content: space-around;
 }
 #create{
-  height: 90%;
-  width: 97.5%;
+  height: 85%;
+  width: 45%;
   background-color: var(--create);
+  border: none;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #000000;
+}
+#cancel{
+  height: 85%;
+  width: 45%;
+  background-color: var(--remove);
   border: none;
   font-size: 3rem;
   font-weight: 500;
 }
 
+
+
+
 /***THE NAVBAR***/
 footer {
-  height: 12.5%;
+  height: 14%;
   width: 100%;
   background-color: var(--level1);
   bottom: 0px;
   left: 0px;
   position: fixed;
 }
-
 nav {
   height: 75%;
   width: 97.5%;
-  
 }
