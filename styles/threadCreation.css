@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+:root {
+  --level1: rgba(255, 255, 255, 0.05);
+  --level2: rgba(255, 255, 255, 0.07);
+  --level3: rgba(255, 255, 255, 0.08);
+  --level4: rgba(255, 255, 255, 0.09);
+  --level5: rgba(255, 255, 255, 0.11);
+  --level6: rgba(255, 255, 255, 0.12);
+  --level7: rgba(255, 255, 255, 0.14);
+  --level8: rgba(255, 255, 255, 0.15);
+  --level9: rgba(255, 255, 255, 0.16);
+
+ 
+  --create: hsl(152, 70%, 43%); 
+  --remove: hsl(12, 70%, 50%);
+  --error:  hsl(0, 70%, 50%);
+  --favorite: hsl(305, 70%, 76%);
+  --extra: hsl(258, 60%, 45%); 
+  
+  --background: hsl(0, 0%, 7%);
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/***THE CONTENT BOX***/
+#content {
+  height: 100vh;
+  background: var(--background);
+  width: 100vw;
+}
+
+
+
+
+/***CLASSES WITH MULTIPLE ELEMENTS***/
+.object{
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px  #000000;
+}
+/*FLEXBOX FOR ALIGNING/CENTERING CHILDREN*/
+.centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*ALIGNING/CENTERING TEXT INPUTS*/
+.centerPosition{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*TEXT INPUT TEXT PROPERTIIES*/
+.textInput{
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+
+
+/***THE TITLE BOX***/
+#pageTitle {
+  width: 100%;
+  height: 8%;
+  background-color: var(--level1);
+}
+h1 {
+  font-size: 100%;
+  color: white;
+  font-size: 3rem;
+}
+
+
+
+
+/***THE FORM***/
+form{
+  background-color: var(--level1);
+  width: 100%;
+  height: 60%;
+  margin-top:2vh;
+  margin-bottom:2vh;
+  position: relative;
+}
+#inputTitle{
+  width: 97.5%;
+  height: 15%;
+  resize: none;
+  top: 10%;
+  background-color: var(--level2);
+  border: none;
+  color:white;
+} 
+
+#inputBody{
+  width: 97.5%;
+  height: 77%;
+  resize: none;
+  top: 59%;
+  background-color: var(--level2);
+  border: none;
+  color:white;
+}
+
+
+
+
+/***THE ACTION BOX***/
+#actionBox{
+  transform: translateY(515%);
+  height: 20%;
+  width: 100%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  background-color: var(--level1);
+  justify-content: space-around;
+}
+#create{
+  height: 85%;
+  width: 45%;
+  background-color: var(--create);
+  border: none;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #000000;
+}
+#cancel{
+  height: 85%;
+  width: 45%;
+  background-color: var(--remove);
+  border: none;
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+
+
+
+/***THE NAVBAR***/
+footer {
+  height: 14%;
+  width: 100%;
+  background-color: var(--level1);
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+}
+nav {
+  height: 75%;
+  width: 97.5%;
+}

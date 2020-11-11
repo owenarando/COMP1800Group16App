@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+  <!-- Bootstrap for Mobile-first, and JQuery -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Optional styles and scripts of your own -->
+  <link rel="stylesheet" href="styles/threadCreation.css">
+
+</head>
+
+<body>
+  <!-- ***THE CONTENT BOX*** -->
+  <div id="content">
+
+    <!-- ***THE TITLE BOX*** -->
+    <header id="pageTitle" class="object center centerFlex">
+      <h1>CREATE A THREAD</h1>
+    </header>
+    <form id="object">
+      <input id="inputTitle" class="object centerPosition textInput" type="text" placeholder="TITLE" value=""></input>
+      <textarea id="inputBody" class="object centerPosition textInput" placeholder="DESCRIPTION" value=""></textarea>
+
+          <!-- ***THE ACTION BOX*** -->
+    <section id="actionBox" class="centerFlex object">
+      <button id="cancel" class="object">CANCEL</button>
+      <button type="submit" id="create" class="object" >CREATE</button>
+    </section>
+    </form>
+
+
+
+    <!-- ***THE NAVBAR*** -->
+    <footer class="object centerFlex">
+      <!-- Header Navigation Bar -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="">HOME</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">my data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="profile.html">my profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">login/signup</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </footer>
+  </div>
+
+  <!----------------------------------------------->
+  <!-- JS: Boostrap, Firebase, API related    -->
+  <!----------------------------------------------->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+  <script src="scripts/firebaseApi.js"></script>
+
+  <script src="scripts/thread.js"></script>
+
+  
+</body>
+
+</html>
