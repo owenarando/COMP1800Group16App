@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/group.css">
-  <link rel="stylesheet" href="styles/color.css">
+  <link rel="stylesheet" href="../styles/creation/groupCreation.css">
+  <link rel="stylesheet" href="../styles/color.css">
  
 </head>
 
@@ -21,51 +21,18 @@
   <div id="content">
 
     <!-- ***THE TITLE BOX*** -->
-    <header id="title" class="object center centerFlex">
-      <h1>GROUP TITLE</h1>
+    <header id="pageTitle" class="object center centerFlex">
+      <h1>CREATE GROUP</h1>
     </header>
+    <form class="object">
+      <input id = "inputTitle" class="object centerPosition textInput" type="text"  placeholder="TITLE"></input>
+      <input id = "inputLinks" class="object centerPosition textInput" type="text" placeholder="NICKNAME" ></input>
+      <textarea id = "inputBody" class="object centerPosition textInput" placeholder="DESCRIPTION"></textarea>
+    </form>
     
-    <!-- ***THE DESCTIPTION BOX*** -->
-    <section id="descriptionContain" class="object centerFlex">
-     <div id="descriptionWrap" class="centerFlex">
-      <p id="description">
-        group description
-      </p>
-    </div>
-    </section>
-
-    <!-- ***THE GRID IN THE MIDDLE*** -->
-    <section id="middleContent">
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-    </section>
-
+    <!-- ***THE ACTION BOX*** -->
     <section id="actionBox" class="centerFlex object">
+      <button id="cancel" class="object">CANCEL</button>
       <button id="create" class="object">CREATE</button>
     </section>
 
@@ -73,7 +40,7 @@
     <footer class="object centerFlex">
       <!-- Header Navigation Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">myApp</a>
+        <a class="navbar-brand" href="">HOME</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -94,8 +61,6 @@
     </footer>
   </div>
 
-
-
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
   <!----------------------------------------------->
@@ -108,10 +73,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  
+  <script src="scripts/postCreation.js"></script>
+  <script src="scripts/firebaseApi.js"></script>
 
 </body>
 

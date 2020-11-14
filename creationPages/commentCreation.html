@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/threadCreation.css">
- 
+  <link rel="stylesheet" href="../styles/creation/commentCreation.css">
+  <link rel="stylesheet" href="../styles/color.css">
 </head>
 
 <body>
@@ -21,11 +21,10 @@
 
     <!-- ***THE TITLE BOX*** -->
     <header id="pageTitle" class="object center centerFlex">
-      <h1>CREATE A THREAD</h1>
+      <h1>CREATE COMMENT</h1>
     </header>
     <form class="object">
-      <input id = "inputTitle" class="object centerPosition textInput" type="text" value="" placeholder="TITLE"></input>
-      <textarea id = "inputBody" class="object centerPosition textInput" value="" placeholder="DESCRIPTION"></textarea>
+      <textarea id = "inputBody" class="object centerPosition textInput" placeholder="COMMENT"></textarea>
     </form>
     
     <!-- ***THE ACTION BOX*** -->
@@ -78,7 +77,7 @@
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/threadCreation.js"></script>
+  <script src="scripts/commentCreation.js"></script>
   <script src="scripts/firebaseApi.js"></script>
 </body>
 

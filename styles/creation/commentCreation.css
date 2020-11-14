@@ -1,25 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Hind);
-:root {
-  --level1: rgba(255, 255, 255, 0.05);
-  --level2: rgba(255, 255, 255, 0.07);
-  --level3: rgba(255, 255, 255, 0.08);
-  --level4: rgba(255, 255, 255, 0.09);
-  --level5: rgba(255, 255, 255, 0.11);
-  --level6: rgba(255, 255, 255, 0.12);
-  --level7: rgba(255, 255, 255, 0.14);
-  --level8: rgba(255, 255, 255, 0.15);
-  --level9: rgba(255, 255, 255, 0.16);
-
- 
-  --create: hsl(152, 70%, 43%); 
-  --remove: hsl(12, 70%, 50%);
-  --error:  hsl(0, 70%, 50%);
-  --favorite: hsl(305, 70%, 76%);
-  --extra: hsl(258, 60%, 45%); 
-  
-  --background: hsl(0, 0%, 7%);
-  
-}
 
 * {
   padding: 0;
@@ -86,29 +65,11 @@ form{
   margin-bottom:2vh;
   position: relative;
 }
-#inputTitle{
-  width: 97.5%;
-  height: 15%;
-  resize: none;
-  top: 10%;
-  background-color: var(--level1);
-  border: none;
-  color:white;
-}
-#inputLinks{
-  width: 97.5%;
-  height: 15%;
-  resize: none;
-  top: 28%;
-  background-color: var(--level1);
-  border: none;
-  color:white;
-}
 #inputBody{
   width: 97.5%;
-  height: 59%;
+  height: 95%;
   resize: none;
-  top: 68%;
+  top: 50%;
   background-color: var(--level1);
   border: none;
   color:white;

@@ -11,8 +11,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/commentCreation.css">
- 
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/color.css">
+
 </head>
 
 <body>
@@ -20,24 +21,82 @@
   <div id="content">
 
     <!-- ***THE TITLE BOX*** -->
-    <header id="pageTitle" class="object center centerFlex">
-      <h1>CREATE A COMMENT</h1>
+    <header id="title" class="object center centerFlex">
+      <h1>HOME</h1>
     </header>
-    <form class="object">
-      <textarea id = "inputBody" class="object centerPosition textInput">COMMENT</textarea>
-    </form>
-    
-    <!-- ***THE ACTION BOX*** -->
-    <section id="actionBox" class="centerFlex object">
-      <button id="cancel" class="object">CANCEL</button>
-      <button id="create" class="object">CREATE</button>
+
+
+    <!-- ***FAVORITES*** -->
+    <section id="favorite" class="object">
+      <button class="object favoriteItem">
+        favorite item
+      </button>
+
+      <button class="object favoriteItem">
+        favorite item
+      </button>
+
+      <button class="object favoriteItem">
+        favorite item
+      </button>
+
+      <button class="object favoriteItem">
+        favorite item
+      </button>
+
     </section>
 
-    <!-- ***THE NAVBAR*** -->
+    <!-- ***GROUPS*** -->
+    <section id="groups">
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+
+      <button class="object group">
+        group
+      </button>
+    </section>
+
+    <section id="actionBox" class="centerFlex object">
+      <button id="remove" class="object">REMOVE</button>
+      <button id="create" class="object">CREATE</button>
+      <button id="join" class="object">JOIN</button>
+    </section>
+
+    <!--
+      ***THE NAVBAR*** 
     <footer class="object centerFlex">
-      <!-- Header Navigation Bar -->
+       Header Navigation Bar 
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">HOME</a>
+        <a class="navbar-brand" href="">myApp</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,7 +115,11 @@
         </div>
       </nav>
     </footer>
+    -->
+
   </div>
+
+
 
   <!----------------------------------------------->
   <!-- JS: Boostrap, Firebase, API related    -->
@@ -71,14 +134,10 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
-
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/commentCreation.js"></script>
-  <script src="scripts/firebaseApi.js"></script>
+
 </body>
 
 </html>

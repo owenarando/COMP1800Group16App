@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/postCreation.css">
- 
+  <link rel="stylesheet" href="../styles/creation/threadCreation.css">
+  <link rel="stylesheet" href="../styles/color.css">
 </head>
 
 <body>
@@ -21,12 +21,11 @@
 
     <!-- ***THE TITLE BOX*** -->
     <header id="pageTitle" class="object center centerFlex">
-      <h1>CREATE A POST</h1>
+      <h1>CREATE THREAD</h1>
     </header>
     <form class="object">
-      <input id = "inputTitle" class="object centerPosition textInput" type="text" value="TITLE"></input>
-      <input id = "inputLinks" class="object centerPosition textInput" type="text" value="LINKS"></input>
-      <textarea id = "inputBody" class="object centerPosition textInput" >BODY</textarea>
+      <input id = "inputTitle" class="object centerPosition textInput" type="text" placeholder="TITLE"></input>
+      <textarea id = "inputBody" class="object centerPosition textInput" placeholder="DESCRIPTION"></textarea>
     </form>
     
     <!-- ***THE ACTION BOX*** -->
@@ -72,16 +71,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
+
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  
-  <script src="scripts/postCreation.js"></script>
+  <script src="scripts/threadCreation.js"></script>
   <script src="scripts/firebaseApi.js"></script>
-
 </body>
 
 </html>

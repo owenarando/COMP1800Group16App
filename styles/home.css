@@ -12,6 +12,7 @@
 }
 
 
+
 /***CLASSES WITH MULTIPLE ELEMENTS***/
 .object{
   border-radius: 0.25rem;
@@ -24,6 +25,7 @@
 }
 
 
+
 /***THE TITLE BOX***/
 #title {
   width: 100%;
@@ -33,49 +35,32 @@
 h1 {
   font-size: 100%;
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 
 
-/***THE DESCTIPTION BOX***/
-#descriptionContain{
-  width: 100%;
-  height: 12.5%;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-  background-color: var(--level1);
-}
-#descriptionWrap{
-  width: 95%;
-  height: 90%;
-  overflow: auto;
-}
-#description{
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
-  margin: auto;
-}
-
-
-/***THE GRID IN THE MIDDLE***/
-#middleContent {
-  height: 45%;
+/***FAVORITES***/
+#favorite {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  box-sizing: border-box;
+  padding-top: 2.5%;
+  height: 25%;
   width: 100%;
   background-color: var(--level1);
   display: grid;
-  grid-auto-rows: 10vh;
+  grid-auto-rows: 5rem;
   row-gap: 1rem;
   place-items: center;
   overflow: auto;
   
 }
-/*THE GRID BUTTONS*/
-#gridItem{
+/*FAVORITE ITEMS*/
+.favoriteItem{
   width: 95%;
-  height: 90%;
-  background-color: var(--level2);
+  height: 100%;
+  background-color: var(--level1);
   border: none;
   grid-row: span 1;
   color: white;
@@ -84,22 +69,72 @@ h1 {
 
 
 
-/***THE ACTION BOX***/
-#actionBox{
-  height: 16%;
+
+/***GROUPS***/
+#groups {
+  height: 42%;
   width: 100%;
+  box-sizing: border-box;
   margin-top: 2vh;
   margin-bottom: 2vh;
+  padding-top: 2.5%;
   background-color: var(--level1);
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 6rem;
+  row-gap: 1rem;
+  column-gap: 1rem;
+  place-items: center;
+  overflow: auto;
 }
-#create{
-  height: 90%;
-  width: 97.5%;
-  background-color: var(--create);
+/*GROUP*/
+.group{
+  width: 6rem;
+  height: 6rem;
+  background-color: var(--level1);
   border: none;
-  font-size: 3rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+
+/***THE ACTION BOX***/
+#actionBox{
+  height: 18%;
+  width: 100%;
+  margin-top: 2vh;
+  background-color: var(--level1);
+  justify-content: space-evenly;
+}
+#join{
+  height: 85%;
+  width: 30%;
+  background-color: var(--extra);
+  border: none;
+  font-size: 1.5rem;
   font-weight: 500;
 }
+#create{
+  height: 85%;
+  width: 30%;
+  background-color: var(--create);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+#remove{
+  height: 85%;
+  width: 30%;
+  background-color: var(--remove);
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+
+
 
 /***THE NAVBAR***/
 footer {
