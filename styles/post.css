@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Hind);
+
+* {
+  padding: 0;
+  margin: 0;
+}
+/***THE CONTENT BOX***/
+#content {
+  height: calc(100%+12rem);
+  background: var(--background);
+  width: 100vw;
+  overflow: auto;
+}
+
+
+
+/***CLASSES WITH MULTIPLE ELEMENTS***/
+.object{
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px  #000000;
+}
+/*FLEXBOX FOR ALIGNING/CENTERING CHILDREN*/
+.centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*ALIGNING/CENTERING TEXT INPUTS*/
+.centerPosition{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*TEXT INPUT TEXT PROPERTIIES*/
+.textInput{
+  text-align: center;
+  font-size: 2rem;
+}
+
+
+
+
+/***THE TITLE BOX***/
+#pageTitle {
+  width: 100%;
+  height: 3.5rem;
+  background-color: var(--level1);
+}
+h1 {
+  font-size: 100%;
+  color: white;
+  font-size: 3rem;
+}
+
+
+
+
+/***THE POST***/
+#post{
+  background-color: var(--level1);
+  width: 100%;
+  height: 25rem;
+  margin-top:0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+#postTitleContain{
+  width: 97.5%;
+  height: 15%;
+  resize: none;
+  top: 10%;
+  background-color: var(--level1);
+  border: none;
+  color:white;
+} 
+#postBodyContain{
+  width: 97.5%;
+  height: 77%;
+  resize: none;
+  top: 59%;
+  background-color: var(--level1);
+  border: none;
+  color:white;
+}
+p{
+  margin: 0;
+}
+#postBody{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+
+
+/***THE COMMENTS***/
+#comments {
+  margin-top: 0.75rem;
+  margin-bottom: 12.5rem;
+  box-sizing: border-box;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  width: 100%;
+  background-color: var(--level1);
+  display: grid;
+  grid-auto-rows: minmax(5rem, auto);
+  row-gap: 1rem;
+  place-items: center;
+}
+.commentContain{
+  width: 95%;
+  min-height: 5rem;
+  border: none;
+  grid-row: span 1;
+  background-color: var(--level1);
+}
+.comment{
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
+
+
+/***THE ACTION BOX AND NAVBAR CONTAINER***/
+#bottomHalf{
+  height: 12.5rem;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  position: fixed;
+  background-color: var(--background);
+}
+
+/***THE ACTION BOX***/
+#actionBox{
+  height: 5.5rem;
+  width: 100%;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  background-color: var(--level1);
+  justify-content: space-evenly;
+}
+#like{
+  height: 85%;
+  width: 30%;
+  background-color: var(--extra);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+#favorite{
+  height: 85%;
+  width: 30%;
+  background-color: var(--favorite);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+#comment{
+  height: 85%;
+  width: 30%;
+  background-color: var(--create);
+  border: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+/***THE NAVBAR***/
+footer {
+  height: 5.5rem;
+  width: 100%;
+  background-color: var(--level1);
+}
+nav {
+  height: 75%;
+  width: 97.5%;
+}
