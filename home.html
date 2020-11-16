@@ -48,46 +48,46 @@
 
     <!-- ***GROUPS*** -->
     <section id="groups">
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Apple">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Banana">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Monkey">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Brain">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Watermelon">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Blueberry">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Lemon">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Orange">Group</a>
       </button>
 
-      <button class="object group">
-        group
+      <button onclick="groupEnter()" class="object group">
+        <a id="Pineapple">Group</a>
       </button>
     </section>
 
     <section id="actionBox" class="centerFlex object">
       <button id="remove" class="object">REMOVE</button>
-      <button id="create" class="object">CREATE</button>
+      <button onclick="createGroup()" id="create" class="object">CREATE</button>
       <button id="join" class="object">JOIN</button>
     </section>
 
@@ -134,9 +134,20 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/firebaseApi.js"> </script>
+
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="scripts/home.js"></script>
+
 
 </body>
 

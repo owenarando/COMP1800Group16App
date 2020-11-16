@@ -5,10 +5,14 @@
 
    <head>
       <title>HTML Forms</title>
+
+      <!-- Firebase CSS for Authentication UI -->
+      <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
+
       <!-- The core Firebase JS SDK is always required and must be listed first -->
-   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
    </head>
 
    <p>Add your details:</p>
@@ -39,15 +43,17 @@
 
       // insert 
       documnet.getElementById('insert').onclick = function () {
-         Ready();
-         firebase.database().ref('student/'+rollV).set({
+         
+         db.ref('student/' + rollV).set({
             NameOfStudent: nameV,
             RollNo: rollV,
-            Section:secV,
+            Section: secV,
             Gender: genV
          })
       }
+      Ready();
    </script>
+
 
 
    <!-- TODO: Add SDKs for Firebase products that you want to use
@@ -67,6 +73,11 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
    </script>
+
+   <script src="scripts/firebaseApi.js"> </script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+
 </body>
 
 </html>
