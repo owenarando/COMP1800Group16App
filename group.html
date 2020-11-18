@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
   <!-- Optional styles and scripts of your own -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="styles/group.css">
   <link rel="stylesheet" href="styles/color.css">
  
@@ -36,6 +37,7 @@
 
     <!-- ***THE GRID IN THE MIDDLE*** -->
     <section id="middleContent">
+      <!-- 
       <button id="gridItem" class="object">
          thread
       </button>
@@ -63,6 +65,7 @@
       <button id="gridItem" class="object">
          thread
       </button>
+    -->
     </section>
 
     <section id="actionBox" class="centerFlex object">
@@ -109,9 +112,17 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
+    <!-- Firebase libraries from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="scripts/firebaseApi.js"></script>
+  <script src="scripts/getThread.js"></script>
 
 </body>
 
