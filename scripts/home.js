@@ -115,6 +115,6 @@ function createGroup() {
 // ** Need to work on differenet group page
 // ** Link to selected page
 function groupEnter() {
-    onclick = location.href = 'group.html';
+    onclick = location.href = 'thread.html';
 
 }
