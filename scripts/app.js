@@ -83,4 +83,3 @@ function addCities() {
         capital: true, population:21500000,
         regions: ["jingjinji", "nohebei"]});
 }
-addCities();

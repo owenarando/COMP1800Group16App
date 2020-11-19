@@ -32,8 +32,8 @@
     
     <!-- ***THE ACTION BOX*** -->
     <section id="actionBox" class="centerFlex object">
-      <button id="cancel" class="object">CANCEL</button>
-      <button id="create" class="object">CREATE</button>
+      <button onclick="cancel()" id="cancel" class="object">CANCEL</button>
+      <button onclick="create()" id="create" class="object">CREATE</button>
     </section>
 
     <!-- ***THE NAVBAR*** -->
@@ -76,12 +76,14 @@
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
 
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/firebaseApi.js"> </script>
+
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  
-  <script src="scripts/postCreation.js"></script>
-  <script src="scripts/firebaseApi.js"></script>
+  <script src="scripts/createGroup.js"></script>
 
 </body>
 

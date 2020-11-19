@@ -22,7 +22,7 @@
 
     <!-- ***THE TITLE BOX*** -->
     <header id="title" class="object center centerFlex">
-      <h1>THREAD TITLE</h1>
+      <h1 id="titleName">THREAD TITLE</h1>
     </header>
     
     <!-- ***THE DESCTIPTION BOX*** -->
@@ -36,57 +36,54 @@
 
     <!-- ***THE GRID IN THE MIDDLE*** -->
     <section id="middleContent">
-      <button id="gridItem" class="object">
-        thread
+      <button onclick="postEnter()" id="gridItem" class="object">
+        <a id = "FirebaseAdvance">post1</a>
+      </button>
+      <button onclick="postEnter()" id="gridItem" class="object">
+        <a id = "FirebaseTurtorial">post2</a>
+      </button>
+      <button onclick="postEnter()" id="gridItem" class="object">
+        <a id = "JUJUWatermelon">p3</a>
+      </button>
+      <button onclick="postEnter()" id="gridItem" class="object">
+        <a id = "NoMoreProject">p4</a>
+      </button>
+      <button onclick="postEnter()" id="gridItem" class="object">
+        p5
       </button>
       <button id="gridItem" class="object">
-        thread
+        p6
       </button>
       <button id="gridItem" class="object">
-        thread
+        p7
       </button>
       <button id="gridItem" class="object">
-        thread
+        p8
       </button>
       <button id="gridItem" class="object">
-        thread
-      </button>
-      <button id="gridItem" class="object">
-        thread
-      </button>
-      <button id="gridItem" class="object">
-        thread
-      </button>
-      <button id="gridItem" class="object">
-        thread
-      </button>
-      <button id="gridItem" class="object">
-        thread
+        p9
       </button>
     </section>
 
     <section id="actionBox" class="centerFlex object">
-      <button id="create" class="object">CREATE</button>
+      <button onclick="createPost()" id="create" class="object">CREATE</button>
     </section>
 
     <!-- ***THE NAVBAR*** -->
     <footer class="object centerFlex">
       <!-- Header Navigation Bar -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">myApp</a>
+        <a class="navbar-brand" href="">NLighteN</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="login.html">my data</a>
+              <a class="nav-link" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">my profile</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">login/signup</a>
+              <a class="nav-link" href="group.html">Group</a>
             </li>
           </ul>
         </div>
@@ -109,9 +106,19 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="scripts/firebaseApi.js"> </script>
+
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
+  <script src="scripts/thread.js"></script>
 
 </body>
 
