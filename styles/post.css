@@ -122,8 +122,24 @@ p{
   text-align: center;
 }
 
+/***THE LIKES***/
+.likesContain {
+  width: 95%;
+  min-height: 5rem;
+  border: none;
+  grid-row: span 1;
+  background-color: var(--level1);
+}
+#likesTitle {
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
 
+#likes {
 
+}
 
 /***THE ACTION BOX AND NAVBAR CONTAINER***/
 #bottomHalf{
