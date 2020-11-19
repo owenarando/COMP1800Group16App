@@ -1,4 +1,4 @@
-function addListener() {
+function createThread() {
 
   //Waits for the submit button to be pressed
   document.getElementById("create").addEventListener("click", function (e) {
@@ -9,7 +9,7 @@ function addListener() {
     var body = document.getElementById("inputBody").value;
 
     //Navigating to the thread in database
-    db.collection("group").doc("FeQvXsEC226j9IJegGRb").collection("thread")
+    db.collection("group").doc("Blueberry").collection("thread")
       .add({
         "title": title,
         "description": body
@@ -17,5 +17,6 @@ function addListener() {
   })
 }
 
-addListener();
+createThread();
+
 
