@@ -121,4 +121,17 @@ function addThreads(currentGroupID) {
 // When the page starts
 // createPage()
 //----------------------------------------------------
-createPage();
+
+function start() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in, loading Home Page");
+      createPage();
+    } else {
+      console.log("No user signed in, loading login page");
+      document.location.href = "login2.html"
+    }
+  })
+}
+
+start();
