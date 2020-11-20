@@ -4,6 +4,10 @@
   padding: 0;
   margin: 0;
 }
+
+body{
+  background-color: black;
+}
 /***THE CONTENT BOX***/
 #threadContent {
   height: 100vh;
@@ -11,7 +15,9 @@
   width: 100vw;
 }
 
-
+.hidden{
+ display: none;
+}
 /***CLASSES WITH MULTIPLE ELEMENTS***/
 .object{
   border-radius: 0.25rem;

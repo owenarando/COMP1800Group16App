@@ -1,6 +1,6 @@
 //---------------------------------------------------
-// Gets the thread ID from the database
-// Runs addPosts with the thread ID
+// Gets the Group ID from user.current
+// Runs the other functions to create the page
 //----------------------------------------------------
 function createPage() {
 
@@ -12,17 +12,13 @@ function createPage() {
         .get()
         .then(function (doc) {
           let currentGroupID = doc.data().currentGroup;
-          let currentThreadID = doc.data().currentThread;
-         
           console.log("current group ID: " + currentGroupID);
-          console.log("current thread ID: " + currentThreadID);
-          
-          addTitle(currentGroupID, currentThreadID);
-          addDescription(currentGroupID, currentThreadID);
-          addPosts(currentGroupID, currentThreadID);
+          addTitle(currentGroupID);
+          addDescription(currentGroupID);
+          addThreads(currentGroupID);
         }).then(function(){
           setTimeout(function(){
-            $("#threadContent").fadeIn(200);
+            $("#groupContent").fadeIn(200);
            }, 300);
         });
     } else {
@@ -33,10 +29,10 @@ function createPage() {
 };
 
 //---------------------------------------------------
-// Puts the post that the user selected on the database
-// then brings the user to the post page
+// Puts the thread that the user selected on the database
+// then brings the user to the threadpage
 //----------------------------------------------------
-function enterPost(postID) {
+function enterThread(threadID) {
   console.log('enterThread()');
 
   firebase.auth().onAuthStateChanged(function (user) {
@@ -45,28 +41,26 @@ function enterPost(postID) {
       db.collection("users").doc(user.uid).collection("current")
       .doc("currentPages")
         .update({
-          currentPost: `${postID}`
+          currentThread: `${threadID}`
         }).then(function () {
-          document.location.href = "post.html"
+          document.location.href = "thread.html"
         });
     } else {
       console.log("no user is signed in");
-      document.location.href = "login2.html"
     }
   })
 }
 
-
 //---------------------------------------------------
 // Adds the title
 //----------------------------------------------------
-function addTitle(groupIdInput, threadIdInput){
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
+function addTitle(currentGroupID){
+  db.collection("group").doc(currentGroupID)
   .get()
   .then(function (doc){
     
     let name = doc.data().name;
-    console.log(`Thread Name: ${name}`);
+    console.log(`Group Name: ${name}`);
 
     const title = document.querySelector('h1');
     title.innerText = `${name}`;
@@ -76,33 +70,33 @@ function addTitle(groupIdInput, threadIdInput){
 //---------------------------------------------------
 // Adds the description
 //----------------------------------------------------
-function addDescription(groupIdInput, threadIdInput){
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
+function addDescription(currentGroupID){
+  db.collection("group").doc(currentGroupID)
   .get()
   .then(function (doc){
     
     let description = doc.data().description;
-    console.log(`Thread Description ${description}`);
+    console.log(`Group Description ${description}`);
 
     const title = document.querySelector('#description');
     title.innerText = `${description}`;
   });
 }
-
 //---------------------------------------------------
-// Gets the post info from the database
-// Creates post html and appends to the body
+// Adds the threads
 //----------------------------------------------------
-function addPosts(groupIdInput, threadIdInput) {
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput).collection("post")
+function addThreads(currentGroupID) {
+  db.collection("group").doc(currentGroupID).collection("thread")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
+
         //Gets data
-        var postName = doc.data().name;
-        var postID = doc.id;
-        console.log(`PostD: ${doc.id}`);
-        console.log(`PostName: ${postName}`);
+        var threadName = doc.data().name;
+        var threadID = doc.id;
+        console.log(`ThreadID: ${doc.id}`);
+        console.log(`ThreadName: ${threadName}`);
+        console.log(" ");
 
         //Creates a new button element and apppends it to group.html
         item = document.createElement("button");
@@ -110,20 +104,21 @@ function addPosts(groupIdInput, threadIdInput) {
         item.className += " object";
 
         //Asigns the id of the thread to the html ID
-        item.id = `${postID}`;
-        item.innerText = postName;
+        item.id = `${threadID}`;
+        item.innerText = threadName;
 
         //When the user clicks on the button it calls enterThread
         //and enters its html Id as the parameter
-        item.setAttribute("onclick", "enterPost(this.id)");
-        $("#threadMiddleContent").prepend(item);
+        item.setAttribute("onclick", "enterThread(this.id)");
+        $("#middleContent").prepend(item);
       });
     });
 };
 
 
+
 //---------------------------------------------------
 // When the page starts
-// getThreads()
+// createPage()
 //----------------------------------------------------
 createPage();

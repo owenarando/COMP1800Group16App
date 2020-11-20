@@ -9,7 +9,7 @@
   <!-- Bootstrap for Mobile-first, and JQuery -->
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!-- Optional styles and scripts of your own -->
   <link rel="stylesheet" href="styles/post.css">
   <link rel="stylesheet" href="styles/color.css">
@@ -18,7 +18,7 @@
 
 <body>
   <!-- ***THE CONTENT BOX*** -->
-  <div id="content">
+  <div id="content" class="hidden">
 
     <!-- ***THE TITLE BOX*** -->
     <header id="pageTitle" class="object center centerFlex">
@@ -74,6 +74,7 @@
       <div class="object commentContain centerFlex">
         <p id ="likesTitle">LIKES: <span id = likes>7</span></p>
       </div>
+      <!-- 
       <div class="object commentContain centerFlex">
         <p class="comment">COMMENT</p>
       </div>
@@ -93,8 +94,9 @@
       <div class="object commentContain centerFlex">
         <p class="comment">COMMENT</p>
       </div>
+      */
     </section>
-
+    -->
   </div>
 
   <!----------------------------------------------->
@@ -110,14 +112,19 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <!-- Firebase libraries from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/groupCreation.js"></script>
   <script src="scripts/firebaseApi.js"></script>
+  <script src="scripts/post.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
 </body>
 
 </html>

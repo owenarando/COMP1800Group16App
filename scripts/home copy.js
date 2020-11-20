@@ -2,17 +2,15 @@
 // Puts the thread that the user selected on the database
 // then brings the user to the threadpage
 //----------------------------------------------------
-
 function enterGroup(groupID) {
   console.log('enterGroup()');
-  
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       //console.log("user is signed in");
-      db.collection("users").doc(user.uid).collection("current")
-        .doc("currentPages")
-        .update({
-          currentGroup: `${groupID}`
+      db.collection("users").doc(user.uid).collection("current").doc("group")
+        .set({
+          currentID: `${groupID}`
         }).then(function () {
           document.location.href = "group.html"
         });
@@ -22,7 +20,7 @@ function enterGroup(groupID) {
   })
 }
 
-function createHome() {
+function addGroups() {
   db.collection("group")
     .get()
     .then((snap) => {
@@ -49,11 +47,7 @@ function createHome() {
         item.setAttribute("onclick", "enterGroup(this.id)");
         $("#groups").prepend(item);
       });
-    }).then(() => {
-      setTimeout(function(){
-        $("#content").fadeIn(200);
-       }, 300);
     });
 };
 
-createHome();
+addGroups();
