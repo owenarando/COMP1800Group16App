@@ -123,8 +123,20 @@ function addPosts(groupIdInput, threadIdInput) {
 
 
 //---------------------------------------------------
-// When the page starts
-// getThreads()
+// Adds Redirect to creation page on button press
+//----------------------------------------------------
+function creationPage(){
+  document.location.href = "/COMP1800Group16App/creationPages/postCreation.html";
+}
+
+const create = document.querySelector("#create");
+create.addEventListener('click', function(){
+  creationPage();
+});
+
+//---------------------------------------------------
+// If user is logged in, create the page. 
+// If not, take them to login 
 //----------------------------------------------------
 
 function start() {

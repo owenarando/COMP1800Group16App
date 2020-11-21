@@ -12,12 +12,12 @@
 
   <!-- Optional styles and scripts of your own -->
   <link rel="stylesheet" href="../styles/creation/commentCreation.css">
-  <link rel="stylesheet" href="../styles/color.css">
+  <link rel="stylesheet" href="../styles/variables.css">
 </head>
 
 <body>
   <!-- ***THE CONTENT BOX*** -->
-  <div id="content">
+  <div id="content" class="hidden">
 
     <!-- ***THE TITLE BOX*** -->
     <header id="pageTitle" class="object center centerFlex">
@@ -58,9 +58,6 @@
     </footer>
   </div>
 
-  <!----------------------------------------------->
-  <!-- JS: Boostrap, Firebase, API related    -->
-  <!----------------------------------------------->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
   </script>
@@ -71,14 +68,24 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
 
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+  <!-- Firebase libraries from CDN -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+
+  <!-- Your own Firebase API key information -->
+  <script src="/COMP1800Group16App/scripts/firebaseApi.js"> </script>
 
   <!--------------------------------------------------------------------->
   <!-- JS files: Your own JavaScript functions included here    -->
   <!--------------------------------------------------------------------->
-  <script src="scripts/commentCreation.js"></script>
-  <script src="scripts/firebaseApi.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <script src="/COMP1800Group16App/scripts/commentCreation.js"></script>
 </body>
 
 </html>

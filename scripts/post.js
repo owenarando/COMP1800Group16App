@@ -118,6 +118,17 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
     });
 };
 
+//---------------------------------------------------
+// Adds Redirect to creation page on button press
+//----------------------------------------------------
+function creationPage(){
+  document.location.href = "/COMP1800Group16App/creationPages/commentCreation.html";
+}
+
+const create = document.querySelector("#comment");
+create.addEventListener('click', function(){
+  creationPage();
+});
 
 //---------------------------------------------------
 // When the page starts

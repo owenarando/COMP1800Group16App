@@ -51,7 +51,7 @@ function createPage() {
       });
     }).then(() => {
       setTimeout(function () {
-        $("#content").fadeIn(200);
+        $("#content").fadeIn(300);
       }, 300);
     });
 };
