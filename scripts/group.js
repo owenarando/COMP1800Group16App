@@ -116,6 +116,18 @@ function addThreads(currentGroupID) {
 };
 
 
+//---------------------------------------------------
+// Adds Redirect to creation page on button press
+//----------------------------------------------------
+function creationPage(){
+  document.location.href = "/COMP1800Group16App/creationPages/threadCreation.html";
+}
+
+const create = document.querySelector("#create");
+create.addEventListener('click', function(){
+  creationPage();
+});
+
 
 //---------------------------------------------------
 // When the page starts
@@ -149,4 +161,20 @@ logout.addEventListener('click', (e) => {
     document.location.href = "login2.html";
   });
 });
+
+
+function start() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in, loading Home Page");
+      createPage();
+    } else {
+      console.log("No user signed in, loading login page");
+      document.location.href = "login2.html"
+    }
+  })
+}
+
+start();
+
 

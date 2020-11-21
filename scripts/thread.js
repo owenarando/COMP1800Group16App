@@ -13,17 +13,17 @@ function createPage() {
         .then(function (doc) {
           let currentGroupID = doc.data().currentGroup;
           let currentThreadID = doc.data().currentThread;
-         
+
           console.log("current group ID: " + currentGroupID);
           console.log("current thread ID: " + currentThreadID);
-          
+
           addTitle(currentGroupID, currentThreadID);
           addDescription(currentGroupID, currentThreadID);
           addPosts(currentGroupID, currentThreadID);
-        }).then(function(){
-          setTimeout(function(){
+        }).then(function () {
+          setTimeout(function () {
             $("#threadContent").fadeIn(200);
-           }, 300);
+          }, 300);
         });
     } else {
       console.log("no user is signed in");
@@ -43,7 +43,7 @@ function enterPost(postID) {
     if (user) {
       //console.log("user is signed in");
       db.collection("users").doc(user.uid).collection("current")
-      .doc("currentPages")
+        .doc("currentPages")
         .update({
           currentPost: `${postID}`
         }).then(function () {
@@ -60,33 +60,33 @@ function enterPost(postID) {
 //---------------------------------------------------
 // Adds the title
 //----------------------------------------------------
-function addTitle(groupIdInput, threadIdInput){
+function addTitle(groupIdInput, threadIdInput) {
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-  .get()
-  .then(function (doc){
-    
-    let name = doc.data().name;
-    console.log(`Thread Name: ${name}`);
+    .get()
+    .then(function (doc) {
 
-    const title = document.querySelector('h1');
-    title.innerText = `${name}`;
-  });
+      let name = doc.data().name;
+      console.log(`Thread Name: ${name}`);
+
+      const title = document.querySelector('h1');
+      title.innerText = `${name}`;
+    });
 }
 
 //---------------------------------------------------
 // Adds the description
 //----------------------------------------------------
-function addDescription(groupIdInput, threadIdInput){
+function addDescription(groupIdInput, threadIdInput) {
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-  .get()
-  .then(function (doc){
-    
-    let description = doc.data().description;
-    console.log(`Thread Description ${description}`);
+    .get()
+    .then(function (doc) {
 
-    const title = document.querySelector('#description');
-    title.innerText = `${description}`;
-  });
+      let description = doc.data().description;
+      console.log(`Thread Description ${description}`);
+
+      const title = document.querySelector('#description');
+      title.innerText = `${description}`;
+    });
 }
 
 //---------------------------------------------------
@@ -123,7 +123,32 @@ function addPosts(groupIdInput, threadIdInput) {
 
 
 //---------------------------------------------------
-// When the page starts
-// getThreads()
+// Adds Redirect to creation page on button press
 //----------------------------------------------------
-createPage();
+function creationPage(){
+  document.location.href = "/COMP1800Group16App/creationPages/postCreation.html";
+}
+
+const create = document.querySelector("#create");
+create.addEventListener('click', function(){
+  creationPage();
+});
+
+//---------------------------------------------------
+// If user is logged in, create the page. 
+// If not, take them to login 
+//----------------------------------------------------
+
+function start() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in, loading Home Page");
+      createPage();
+    } else {
+      console.log("No user signed in, loading login page");
+      document.location.href = "login2.html"
+    }
+  })
+}
+
+start();

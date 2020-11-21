@@ -5,7 +5,7 @@
 
 function enterGroup(groupID) {
   console.log('enterGroup()');
-  
+
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       //console.log("user is signed in");
@@ -19,10 +19,10 @@ function enterGroup(groupID) {
     } else {
       console.log("no user is signed in");
     }
-  })
+  });
 }
 
-function createHome() {
+function createPage() {
   db.collection("group")
     .get()
     .then((snap) => {
@@ -33,7 +33,7 @@ function createHome() {
         var groupID = doc.id;
         console.log(`GroupID: ${doc.id}`);
         console.log(`GroupName: ${groupName}`);
-        
+
 
         //Creates a new button element and apppends it to group.html
         item = document.createElement("button");
@@ -50,10 +50,23 @@ function createHome() {
         $("#groups").prepend(item);
       });
     }).then(() => {
-      setTimeout(function(){
-        $("#content").fadeIn(200);
-       }, 300);
+      setTimeout(function () {
+        $("#content").fadeIn(300);
+      }, 300);
     });
 };
 
-createHome();
+
+function start() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in, loading Home Page");
+      createPage();
+    } else {
+      console.log("No user signed in, loading login page");
+      document.location.href = "login2.html"
+    }
+  })
+}
+
+start();

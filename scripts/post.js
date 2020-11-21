@@ -118,9 +118,32 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
     });
 };
 
+//---------------------------------------------------
+// Adds Redirect to creation page on button press
+//----------------------------------------------------
+function creationPage(){
+  document.location.href = "/COMP1800Group16App/creationPages/commentCreation.html";
+}
+
+const create = document.querySelector("#comment");
+create.addEventListener('click', function(){
+  creationPage();
+});
 
 //---------------------------------------------------
 // When the page starts
 // getThreads()
 //----------------------------------------------------
-createPage();
+function start() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      console.log("User is signed in, loading Home Page");
+      createPage();
+    } else {
+      console.log("No user signed in, loading login page");
+      document.location.href = "login2.html"
+    }
+  })
+}
+
+start();
