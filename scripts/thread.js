@@ -95,6 +95,7 @@ function addDescription(groupIdInput, threadIdInput) {
 //----------------------------------------------------
 function addPosts(groupIdInput, threadIdInput) {
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput).collection("post")
+    .orderBy("name", "desc")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {

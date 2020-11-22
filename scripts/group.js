@@ -87,6 +87,7 @@ function addDescription(currentGroupID){
 //----------------------------------------------------
 function addThreads(currentGroupID) {
   db.collection("group").doc(currentGroupID).collection("thread")
+    .orderBy("name", "desc")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
