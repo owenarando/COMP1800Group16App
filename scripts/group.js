@@ -134,6 +134,35 @@ create.addEventListener('click', function(){
 // When the page starts
 // createPage()
 //----------------------------------------------------
+createPage();
+
+//---------------------------------------------------
+// JQuery that displays settings when cog button is clicked
+//----------------------------------------------------
+
+$(document).ready(function () {
+  $("#settings").hide();
+  $("#cog").on("click", () => {
+    $("#settings").toggle();
+  });
+});
+
+
+//---------------------------------------------------
+// Log user out
+//----------------------------------------------------
+
+const auth = firebase.auth();
+const logout = document.querySelector('#logout');
+
+logout.addEventListener('click', (e) => {
+  e.preventDefault();
+  auth.signOut().then(() => {
+    console.log("User signed out");
+    document.location.href = "login2.html";
+  });
+});
+
 
 function start() {
   firebase.auth().onAuthStateChanged(function (user) {
