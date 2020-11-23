@@ -2,137 +2,125 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>My BCIT Project</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project">
-  <meta name="author" content="BCIT">
-  <!-- Bootstrap for Mobile-first, and JQuery -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Optional styles and scripts of your own -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 WebApp NlightN" content="GroupPage>
+    <meta name=" author" content="BCIT">
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="styles/group&Thread.css">
+    <link rel="stylesheet" href="styles/variables.css">
 
-  <!-- Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles/group.css">
-  <link rel="stylesheet" href="styles/variables.css">
- 
 </head>
 
 <body>
-  <!-- ***THE CONTENT BOX*** -->
-  <div id="groupContent" class="hidden">
+    <!----------------------------------------------->
+    <!-- The Content Box -->
+    <!----------------------------------------------->
+    <div id="content" class="hidden">
 
-    <!-- ***THE TITLE BOX*** -->
-    <header id="title" class="object center centerFlex">
-      <h1>GROUP TITLE</h1>
-      <a href="#"><span class="material-icons" id="cog">
-          settings
-        </span></a>
-    </header>
+        <!----------------------------------------------->
+        <!-- The Title and the Settings-->
+        <!----------------------------------------------->
+        <div id="upperBox">
+            <div id="titleWrap">
+                <header id="title" class="object centerFlex">
+                    <h1>GROUP TITLE</h1>
+                </header>
+            </div>
+            <div id="settingsWrap">
+            <button id="gearContain" class="object centerFlex">
+                <i id="gear" class="material-icons">settings</i>
+            </button>
+        </div>
+        </div>
 
-    <!-- ***THE POPUP BUTTONS FROM COG BUTTON*** -->
-    <div id="settings">
-      <button class="popUpButtons" id="logout">Log Out</button>
+        <!-- ***THE POPUP BUTTONS FROM COG BUTTON*** -->
+        <div id="settings" class="object centerFlex">
+            <button class="popUpButtons buttonText" id="logout">Log Out</button>
+        </div>
+
+        <!----------------------------------------------->
+        <!-- The Description Section-->
+        <!----------------------------------------------->
+        <section id="descriptionContain" class="object centerFlex">
+            <div id="descriptionWrap" class="centerFlex">
+                <p id="description">
+                    group description
+                </p>
+            </div>
+        </section>
+
+        <!----------------------------------------------->
+        <!-- The Threads Section-->
+        <!----------------------------------------------->
+        <div id="middleContain" class="object">
+            <section id="middleContent" class="object">
+            </section>
+        </div>
+
+        <!----------------------------------------------->
+        <!-- The Action Box-->
+        <!----------------------------------------------->
+        <section id="actionBox" class="centerFlex object">
+            <button id="create" class="object centerFlex">
+                <i id="createIcon" class="material-icons">add_box</i>
+            </button>
+        </section>
+
+
+        <!----------------------------------------------->
+        <!-- The NavBar at the bottom-->
+        <!----------------------------------------------->
+        <footer class="object centerFlex">
+            <!-- Header Navigation Bar -->
+            <nav class="object">
+                <div id="homeContain">
+                    <button id="home" class="object centerFlex">
+                        <i id="homeIcon" class="material-icons">home</i>
+                    </button>
+                </div>
+                <div id="backContain">
+                    <button id="back" class="object centerFlex">
+                        <i id="backIcon" class="material-icons">forward</i>
+                    </button>
+                </div>
+
+            </nav>
+        </footer>
     </div>
 
-    <!-- ***THE DESCTIPTION BOX*** -->
-    <section id="descriptionContain" class="object centerFlex">
-      <div id="descriptionWrap" class="centerFlex">
-        <p id="description">
-          group description
-        </p>
-      </div>
-    </section>
-
-    <!-- ***THE GRID IN THE MIDDLE*** -->
-    <section id="middleContent">
-      <!-- 
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-      <button id="gridItem" class="object">
-         thread
-      </button>
-    -->
-    </section>
-
-    <section id="actionBox" class="centerFlex object">
-      <button id="create" class="object">CREATE</button>
-    </section>
-
-    <!-- ***THE NAVBAR*** -->
-    <footer class="object centerFlex">
-      <!-- Header Navigation Bar -->
-      <nav class="navbar navbar-light bg">
-        <!-- Dropup button
-        <div class="dropup"></div>
-            <div class="dropup-content">
-            <a href="#">Thread</a>
-            <a href="#">Thread</a>
-            <a href="#">Thread</a>
-          </div>
-           -->
-        <a class="navbar-brand" href="home.html"><span class="material-icons home">
-            home
-          </span></a>
-        <a class="navbar-brand" href="#"><span class="material-icons">
-            keyboard_backspace
-          </span></a>
-      </nav>
-    </footer>
-  </div>
-
-
-
-  <!----------------------------------------------->
-  <!-- JS: Boostrap, Firebase, API related    -->
-  <!----------------------------------------------->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-  <!-- Firebase libraries from CDN -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <!-- Firebase libraries from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  <script src="scripts/firebaseApi.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="scripts/group.js"></script>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/firebaseApi.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/group.js"></script>
 </body>
 
 </html>

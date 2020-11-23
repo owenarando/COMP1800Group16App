@@ -25,7 +25,7 @@ function createPage() {
         }).then(function () {
           //Creates a delay so the content is all dispolayed at once
           setTimeout(function () {
-            $("#threadContent").fadeIn(200);
+            $("#content").fadeIn(200);
           }, 300);
         });
     } else {
@@ -112,6 +112,7 @@ function addPosts(groupIdInput, threadIdInput) {
 
   ////Navigating to the post.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput).collection("post")
+    .orderBy("name", "desc")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
@@ -136,7 +137,7 @@ function addPosts(groupIdInput, threadIdInput) {
         //calls the enterPost() method that uses the current postID as 
         //a parameter.
         item.setAttribute("onclick", "enterPost(this.id)");
-        $("#threadMiddleContent").prepend(item);
+        $("#middleContent").prepend(item);
       });
     });
 };

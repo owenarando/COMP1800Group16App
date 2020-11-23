@@ -29,7 +29,7 @@ function createPage() {
           //Setting a timeout to allow everything to load in at the same time.
           setTimeout(function(){
             $("#content").fadeIn(200);
-           }, 300);
+          }, 300);
         });
     } else {
       console.log("no user is signed in");
@@ -114,7 +114,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
 
   //Navigating to the comments for a certain post.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-  .collection("post").doc(postIdInput).collection("comment")
+    .collection("post").doc(postIdInput).collection("comment")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
@@ -147,7 +147,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
 //---------------------------------------------------
 // Adds Redirect to comment creation page.
 //----------------------------------------------------
-function creationPage(){
+function creationPage() {
   document.location.href = "/COMP1800Group16App/creationPages/commentCreation.html";
 }
 
@@ -159,6 +159,125 @@ const create = document.querySelector("#comment");
 create.addEventListener('click', function(){
   creationPage();
 });
+
+//---------------------------------------------------
+// Adds to favorites when item is favorited
+//----------------------------------------------------
+function favorite() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+
+      //Reads from the database to find out what the current pages are
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          let currentGroupID = doc.data().currentGroup;
+          let currentThreadID = doc.data().currentThread;
+
+
+          //Checks if the item is already in the favorites
+          db.collection("users").doc(user.uid).collection("favorites")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              //If it exists, then delete it.
+              if (doc.exists) {
+
+                db.collection("users").doc(user.uid).collection("favorites")
+                  .doc(`${currentPostID}`).delete()
+                console.log(" The favorite is removed.");
+
+                //If it does not, then add it.
+              } else {
+
+                db.collection("users").doc(user.uid).collection("favorites")
+                  .doc(`${currentPostID}`)
+                  .set({
+                    postID: `${currentPostID}`,
+                    threadID: `${currentThreadID}`,
+                    groupID: `${currentGroupID}`
+                  });
+                console.log(" The favorite is added.");
+              }
+            })
+        });
+    } else {
+      console.log("no user is signed in");
+    }
+  });
+}
+
+const favoriteButton = document.querySelector("#favorite");
+favoriteButton.addEventListener('click', function () {
+  favorite();
+});
+
+
+//---------------------------------------------------
+// Adds a like to the post when the user likes it 
+//----------------------------------------------------
+function likePost() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          let currentGroupID = doc.data().currentGroup;
+          let currentThreadID = doc.data().currentThread;
+
+          db.collection("users").doc(user.uid).collection("liked")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                console.log("like exists");
+                db.collection("users").doc(user.uid).collection("liked")
+                  .doc(`${currentPostID}`).delete()
+                  .then(function () {
+                    db.collection("group").doc(`${currentGroupID}`).collection("thread")
+                      .doc(`${currentThreadID}`).collection("post").doc(`${currentPostID}`)
+                      .update({
+                        likes: firebase.firestore.FieldValue.increment(-1)
+                      })
+                      console.log("like removed");
+                  })
+              } else {
+                console.log("like does not exist");
+                db.collection("users").doc(user.uid).collection("liked")
+                  .doc(`${currentPostID}`)
+                  .set({
+                    liked: true
+                  }).then(function () {
+                    db.collection("group").doc(`${currentGroupID}`).collection("thread")
+                      .doc(`${currentThreadID}`).collection("post").doc(`${currentPostID}`)
+                      .update({
+                        likes: firebase.firestore.FieldValue.increment(1)
+                      })
+                      console.log("like added");
+                  });
+              }
+            });
+            setTimeout(function(){
+              addLikes(currentGroupID, currentThreadID, currentPostID);
+             }, 700);
+        });
+    } else {
+
+    }
+  })
+}
+
+
+const like = document.querySelector("#like");
+like.addEventListener('click', function () {
+  likePost();
+});
+
+
 
 //---------------------------------------------------
 // When the page starts

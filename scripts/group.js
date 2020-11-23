@@ -6,7 +6,6 @@ function createPage() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      //console.log("user is signed in");
       db.collection("users").doc(user.uid).collection("current")
         .doc("currentPages")
         .get()
@@ -18,7 +17,7 @@ function createPage() {
           addThreads(currentGroupID);
         }).then(function(){
           setTimeout(function(){
-            $("#groupContent").fadeIn(200);
+            $("#content").fadeIn(200);
            }, 300);
         });
     } else {
@@ -87,6 +86,7 @@ function addDescription(currentGroupID){
 //----------------------------------------------------
 function addThreads(currentGroupID) {
   db.collection("group").doc(currentGroupID).collection("thread")
+    .orderBy("name", "desc")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
@@ -133,7 +133,7 @@ create.addEventListener('click', function(){
 // When the page starts
 // createPage()
 //----------------------------------------------------
-createPage();
+
 
 //---------------------------------------------------
 // JQuery that displays settings when cog button is clicked

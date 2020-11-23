@@ -6,12 +6,12 @@
 }
 
 body{
-  background-color: var(--background);
+  background-color: var(--dark2);
 }
 /***THE CONTENT BOX***/
 #content {
   height: 100vh;
-  background: var(--background);
+  background: var(--dark2);
   width: 100vw;
 }
 
@@ -45,28 +45,67 @@ body{
 
 
 
-/***THE TITLE BOX***/
-#pageTitle {
-  width: 100%;
-  height: 8%;
-  background-color: var(--level1);
-}
-h1 {
-  font-size: 100%;
-  color: white;
-  font-size: 3rem;
+/*--------------------------------*/
+/***The Title and the Settings***/
+/*------------------------------*/
+/*The Container*/
+#upperBox {
+    height: 8%;
+    width: 100%;
+    position: relative;
+    background-color: var(--red);
 }
 
+
+/*The title*/
+#titleWrap{
+    display: inline-block;
+}
+#title {
+    width: 82%;
+    height: 95%;
+    background-color: var(--light1);
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+h1 {
+    color: var(--dark)2;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/*The Settings Button */
+#settingsWrap{
+    display: inline-block;
+}
+#gearContain {
+    width: 15%;
+    height: 95%;
+    background-color: var(--red);
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
+}
+/*The Settings Icon*/
+#gear {
+    font-size: 3rem;
+    color: var(--light1);
+    margin: 0;
+    padding: 0;
+}
 
 
 
 /***THE FORM***/
 form{
-  background-color: var(--level1);
+  background-color: var(--dark1);
   width: 100%;
-  height: 60%;
+  height: 62.5%;
   margin-top:2vh;
-  margin-bottom:2vh;
   position: relative;
 }
 #inputTitle{
@@ -96,42 +135,139 @@ form{
 #actionBox{
   height: 12%;
   width: 100%;
-  margin-top: 2vh;
+  margin-top: 1.5vh;
   margin-bottom: 2vh;
-  background-color: var(--level1);
-  justify-content: space-around;
+  background-color: var(--dark1);
 }
-#create{
-  height: 85%;
-  width: 45%;
-  background-color: var(--create);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
-  color: #000000;
-}
-#cancel{
-  height: 85%;
-  width: 45%;
-  background-color: var(--remove);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
+/*The navbar*/
+#actionButtonWrap {
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
 }
 
+/*The so that multiple buttons can be on the same row*/
+#createontain {
+    display: inline;
+}
+/*The home button*/
+#create {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*The home button icon*/
+#createIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
+
+/*The so that multiple buttons can be on the same row*/
+#cancelContain {
+    display: inline;
+}
+/*The back button */
+#cancel {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*The back button icon*/
+#cancelIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
 
 
 
-/***THE NAVBAR***/
+/*-----------------------------*/
+/**The Navbar at the botton***/
+/*----------------------------*/
+/*Sticky footer for the navbar*/
 footer {
-  height: 14%;
-  width: 100%;
-  background-color: var(--level1);
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
+    height: 12.5%;
+    width: 100%;
+    background-color: var(--dark1);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
 }
+
+/*The navbar*/
 nav {
-  height: 75%;
-  width: 97.5%;
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
 }
+
+/*The so that multiple buttons can be on the same row*/
+#homeContain {
+    display: inline;
+}
+/*The home button*/
+#home {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*The home button icon*/
+#homeIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
+
+/*The so that multiple buttons can be on the same row*/
+#backContain {
+    display: inline;
+}
+/*The back button */
+#back {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*The back button icon*/
+#backIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+    transform: scaleX(-1);
+}
+
