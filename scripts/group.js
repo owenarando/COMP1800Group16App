@@ -6,7 +6,6 @@ function createPage() {
 
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
-      //console.log("user is signed in");
       db.collection("users").doc(user.uid).collection("current")
         .doc("currentPages")
         .get()

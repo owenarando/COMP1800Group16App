@@ -18,25 +18,16 @@ function createPage() {
           console.log("current group ID: " + currentGroupID);
           console.log("current thread ID: " + currentThreadID);
           console.log("current post ID: " + currentPostID);
-<<<<<<< HEAD
-
-=======
           
           //Calling the add fuctions to display trhe correct groups, threads, posts.
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
           addTitle(currentGroupID, currentThreadID, currentPostID);
           addBody(currentGroupID, currentThreadID, currentPostID);
           addLikes(currentGroupID, currentThreadID, currentPostID);
           addComments(currentGroupID, currentThreadID, currentPostID);
-<<<<<<< HEAD
-        }).then(function () {
-          setTimeout(function () {
-=======
         }).then(function(){
 
           //Setting a timeout to allow everything to load in at the same time.
           setTimeout(function(){
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
             $("#content").fadeIn(200);
           }, 300);
         });
@@ -51,20 +42,6 @@ function createPage() {
 // Adds the title to the post.
 // Accepts the groupID and threadID and postID as paramenters.
 //----------------------------------------------------
-<<<<<<< HEAD
-function addTitle(groupIdInput, threadIdInput, postIdInput) {
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-    .collection("post").doc(postIdInput)
-    .get()
-    .then(function (doc) {
-
-      let name = doc.data().name;
-      console.log(`Thread Name: ${name}`);
-
-      const title = document.querySelector('h1');
-      title.innerText = `${name}`;
-    });
-=======
 function addTitle(groupIdInput, threadIdInput, postIdInput){
 
   //Navigating to the post inside of a certain group and thread.
@@ -81,27 +58,12 @@ function addTitle(groupIdInput, threadIdInput, postIdInput){
     const title = document.querySelector('h1');
     title.innerText = `${name}`;
   });
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
 }
 
 //---------------------------------------------------
 // Adds the body to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
-<<<<<<< HEAD
-function addBody(groupIdInput, threadIdInput, postIdInput) {
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-    .collection("post").doc(postIdInput)
-    .get()
-    .then(function (doc) {
-
-      let body = doc.data().body;
-      console.log(`Post Body ${body}`);
-
-      const postBody = document.querySelector('#postBody');
-      postBody.innerText = `${body}`;
-    });
-=======
 function addBody(groupIdInput, threadIdInput, postIdInput){
 
   //Navigating to the post inside of a certain group and thread.
@@ -118,33 +80,12 @@ function addBody(groupIdInput, threadIdInput, postIdInput){
     const postBody = document.querySelector('#postBody');
     postBody.innerText = `${body}`;
   });
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
 }
 
 //---------------------------------------------------
 // Adds likes to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
-<<<<<<< HEAD
-function addLikes(groupIdInput, threadIdInput, postIdInput) {
-  db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-    .collection("post").doc(postIdInput)
-    .get()
-    .then(function (doc) {
-
-      let likes = doc.data().likes;
-      console.log(`likes: ${likes}`);
-      if (likes < 0) {
-      db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-      .collection("post").doc(postIdInput)
-      .update({
-        likes: 0
-      });
-      }
-      const postLikes = document.querySelector('#likes');
-      postLikes.innerText = `${likes}`;
-    });
-=======
 function addLikes(groupIdInput, threadIdInput, postIdInput){
 
   //Navigating to the post inside of a certain group and thread.
@@ -161,7 +102,6 @@ function addLikes(groupIdInput, threadIdInput, postIdInput){
     const postLikes = document.querySelector('#likes');
     postLikes.innerText = `${likes}`;
   });
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
 }
 
 
@@ -188,12 +128,8 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
         commentContainer.className = "object";
         commentContainer.className += " commentContain";
         commentContainer.className += " centerFlex";
-<<<<<<< HEAD
-
-=======
         
         //Creates a p that will hold the comment.
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
         comment = document.createElement("p");
         comment.className = "comment";
         comment.innerText = `${commentBody}`
@@ -217,14 +153,10 @@ function creationPage() {
 
 //Variable that stores the comment button.
 const create = document.querySelector("#comment");
-<<<<<<< HEAD
-create.addEventListener('click', function () {
-=======
 
 //EventListener that redirects user to comment creation when comment
 //button is clicked.
 create.addEventListener('click', function(){
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
   creationPage();
 });
 

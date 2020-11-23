@@ -2,7 +2,6 @@
 // Takes in the ID of a post. That same ID is also 
 // then brings the user to the threadpage
 //----------------------------------------------------
-<<<<<<< HEAD
 function enterFavorite(postIdInput) {
     //Checks if the user is signed in 
     firebase.auth().onAuthStateChanged(function (user) {
@@ -35,8 +34,6 @@ function enterFavorite(postIdInput) {
 // UPDATES .update() what group the user is currently in
 // Then loads group.htmL
 //----------------------------------------------------
-=======
->>>>>>> bbd6a90dba2a13e9d3414e3d18d7eb94a9cd3818
 function enterGroup(groupID) {
     //Checks if the user us logged in 
     firebase.auth().onAuthStateChanged(function (user) {

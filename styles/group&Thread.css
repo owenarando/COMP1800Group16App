@@ -57,7 +57,7 @@ h1 {
 #gearContain {
     width: 15%;
     height: 95%;
-    background-color: var(--orange);
+    background-color: var(--red);
     position: absolute;
     right: 1%;
     top: 50%;
