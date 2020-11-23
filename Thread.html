@@ -2,127 +2,120 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>My BCIT Project</title>
-  <meta name="comp1800 boilerplate code" content="my bcit project">
-  <meta name="author" content="BCIT">
-  <!-- Bootstrap for Mobile-first, and JQuery -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- Optional styles and scripts of your own -->
-  <link rel="stylesheet" href="styles/thread.css">
-  <link rel="stylesheet" href="styles/variables.css">
- 
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <meta name="comp1800 WebApp NlightN" content="ThreadPage">
+    <meta name="author" content="BCIT">
+    <!-- Bootstrap for Mobile-first, and JQuery -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="styles/group&Thread.css">
+    <link rel="stylesheet" href="styles/variables.css">
+
 </head>
 
 <body>
-  <!-- ***THE CONTENT BOX*** -->
-  <div id="threadContent" class="hidden">
+    <!----------------------------------------------->
+    <!-- The Content Box -->
+    <!----------------------------------------------->
+    <div id="content" class="hidden">
 
-    <!-- ***THE TITLE BOX*** -->
-    <header id="title" class="object center centerFlex">
-      <h1 id="titleName">THREAD TITLE</h1>
-    </header>
-    
-    <!-- ***THE DESCTIPTION BOX*** -->
-    <section id="descriptionContain" class="object centerFlex">
-     <div id="descriptionWrap" class="centerFlex">
-      <p id="description">
-       thread description
-      </p>
-    </div>
-    </section>
+        <!----------------------------------------------->
+        <!-- The Title and the Settings-->
+        <!----------------------------------------------->
+        <div id="upperBox">
+            <header id="title" class="object centerFlex">
+                <h1>GROUP TITLE</h1>
+            </header>
 
-    <!-- ***THE GRID IN THE MIDDLE*** -->
-    <section id="threadMiddleContent">
-      <!--
-      <button onclick="postEnter()" id="gridItem" class="object">
-        <a id = "FirebaseAdvance">post1</a>
-      </button>
-      <button onclick="postEnter()" id="gridItem" class="object">
-        <a id = "FirebaseTurtorial">post2</a>
-      </button>
-      <button onclick="postEnter()" id="gridItem" class="object">
-        <a id = "JUJUWatermelon">p3</a>
-      </button>
-      <button onclick="postEnter()" id="gridItem" class="object">
-        <a id = "NoMoreProject">p4</a>
-      </button>
-      <button onclick="postEnter()" id="gridItem" class="object">
-        p5
-      </button>
-      <button id="gridItem" class="object">
-        p6
-      </button>
-      <button id="gridItem" class="object">
-        p7
-      </button>
-      <button id="gridItem" class="object">
-        p8
-      </button>
-      <button id="gridItem" class="object">
-        p9
-      </button>
-      -->
-    </section>
-
-    <section id="actionBox" class="centerFlex object">
-      <button onclick="createPost()" id="create" class="object">CREATE</button>
-    </section>
-
-    <!-- ***THE NAVBAR*** -->
-    <footer class="object centerFlex">
-      <!-- Header Navigation Bar -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="">NLighteN</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="group.html">Group</a>
-            </li>
-          </ul>
+            <button id="gearContain" class="object centerFlex">
+                <i id="gear" class="material-icons">settings</i>
+            </button>
         </div>
-      </nav>
-    </footer>
-  </div>
+        
+        <!-- ***THE POPUP BUTTONS FROM COG BUTTON***
+        <div id="settings" class="object centerFlex">
+            <button class="popUpButtons buttonText" id="logout">Log Out</button>
+        </div>
+         -->
+        <!----------------------------------------------->
+        <!-- The Description Section-->
+        <!----------------------------------------------->
+        <section id="descriptionContain" class="object centerFlex">
+            <div id="descriptionWrap" class="centerFlex">
+                <p id="description">
+                    group description
+                </p>
+            </div>
+        </section>
+
+        <!----------------------------------------------->
+        <!-- The Threads Section-->
+        <!----------------------------------------------->
+        <div id="middleContain" class="object">
+            <section id="middleContent" class="object">
+            </section>
+        </div>
+        
+
+        <section id="actionBox" class="centerFlex object">
+            <button id="create" class="object">
+                <i id="createIcon" class="material-icons">add_box</i>
+            </button>
+        </section>
 
 
+        <!----------------------------------------------->
+        <!-- The NavBar at the bottom-->
+        <!----------------------------------------------->
+        <footer class="object centerFlex">
+            <!-- Header Navigation Bar -->
+            <nav class="object">
+                <div id="homeContain">
+                    <button id="home" class="object centerFlex">
+                        <i id="homeIcon" class="material-icons">home</i>
+                    </button>
+                </div>
+                <div id="backContain">
+                    <button id="back" class="object centerFlex">
+                        <i id="backIcon" class="material-icons">forward</i>
+                    </button>
+                </div>
 
-  <!----------------------------------------------->
-  <!-- JS: Boostrap, Firebase, API related    -->
-  <!----------------------------------------------->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
+            </nav>
+        </footer>
+    </div>
 
-  <!-- Firebase libraries from CDN -->
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+    <!----------------------------------------------->
+    <!-- JS: Boostrap, Firebase, API related    -->
+    <!----------------------------------------------->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 
-  <!-- Your own Firebase API key information -->
-  <script src="scripts/firebaseApi.js"> </script>
+    <!-- Firebase libraries from CDN -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
 
-  <!--------------------------------------------------------------------->
-  <!-- JS files: Your own JavaScript functions included here    -->
-  <!--------------------------------------------------------------------->
-  
-  <script src="scripts/thread.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--------------------------------------------------------------------->
+    <!-- JS files: Your own JavaScript functions included here    -->
+    <!--------------------------------------------------------------------->
+    <script src="scripts/firebaseApi.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts/thread.js"></script>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ function createPage() {
           addThreads(currentGroupID);
         }).then(function(){
           setTimeout(function(){
-            $("#groupContent").fadeIn(200);
+            $("#content").fadeIn(200);
            }, 300);
         });
     } else {
@@ -134,7 +134,7 @@ create.addEventListener('click', function(){
 // When the page starts
 // createPage()
 //----------------------------------------------------
-createPage();
+
 
 //---------------------------------------------------
 // JQuery that displays settings when cog button is clicked

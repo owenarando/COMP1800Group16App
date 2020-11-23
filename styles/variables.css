@@ -1,31 +1,59 @@
 :root {
-  --level1: rgba(255, 255, 255, 0.1);
-  --level2: rgba(255, 255, 255, 0.07);
-  --level3: rgba(255, 255, 255, 0.08);
-  --level4: rgba(255, 255, 255, 0.09);
-  --level5: rgba(255, 255, 255, 0.11);
-  --level6: rgba(255, 255, 255, 0.12);
-  --level7: rgba(255, 255, 255, 0.14);
-  --level8: rgba(255, 255, 255, 0.15);
-  --level9: rgba(255, 255, 255, 0.16);
+    --level1: rgba(255, 255, 255, 0.1);
+    --level2: rgba(255, 255, 255, 0.07);
+    --level3: rgba(255, 255, 255, 0.08);
+    --level4: rgba(255, 255, 255, 0.09);
+    --level5: rgba(255, 255, 255, 0.11);
+    --level6: rgba(255, 255, 255, 0.12);
+    --level7: rgba(255, 255, 255, 0.14);
+    --level8: rgba(255, 255, 255, 0.15);
+    --level9: rgba(255, 255, 255, 0.16);
 
- 
-  --create: hsl(152, 70%, 43%); 
-  --remove: hsl(12, 70%, 50%);
-  --error:  hsl(0, 70%, 50%);
-  --favorite: hsl(305, 70%, 76%);
-  --extra: hsl(258, 60%, 45%); 
-  
-  --yellow:  hsl(60, 80%, 70%);
-  --background: hsl(0, 0%, 7%);
 
-  --input: rgba(255, 255, 255, 0.07);
-  
+    --create: hsl(152, 70%, 43%);
+    --remove: hsl(12, 70%, 50%);
+    --error: hsl(0, 70%, 50%);
+    --favorite: hsl(305, 70%, 76%);
+    --extra: hsl(258, 60%, 45%);
+
+    --yellow: hsl(60, 80%, 70%);
+    --background: hsl(0, 0%, 7%);
+
+    --input: rgba(255, 255, 255, 0.07);
+
+    --dark1: #2A3C47;
+    --dark2: #0F222D;
+    --light1: #FFF5D0;
+    --light2: #EBE7D9;
+    --orange: #F55139;
+    --red: #BA3521;
+
 }
 
-.hidden{
-  display: none;
+.hidden {
+    display: none;
 }
-.error{
-  background-color: var(--error);
+
+
+.error {
+    background-color: var(--error);
 }
+
+.buttonText {
+    font-weight: 800;
+}
+
+
+/***CLASSES WITH MULTIPLE ELEMENTS***/
+.object {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 8px #000000;
+}
+
+.centerFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

@@ -22,7 +22,7 @@ function createPage() {
           addPosts(currentGroupID, currentThreadID);
         }).then(function () {
           setTimeout(function () {
-            $("#threadContent").fadeIn(200);
+            $("#content").fadeIn(200);
           }, 300);
         });
     } else {
@@ -117,7 +117,7 @@ function addPosts(groupIdInput, threadIdInput) {
         //When the user clicks on the button it calls enterThread
         //and enters its html Id as the parameter
         item.setAttribute("onclick", "enterPost(this.id)");
-        $("#threadMiddleContent").prepend(item);
+        $("#middleContent").prepend(item);
       });
     });
 };
