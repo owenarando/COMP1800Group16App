@@ -1,6 +1,6 @@
 //---------------------------------------------------
-// Gets the thread info from the database
-// Creates post html and appends to the body
+//Gets the thread info from the database.
+//Creates post html and appends to the body.
 //----------------------------------------------------
 function addThreads() {
   db.collection("group").doc("owentest").collection("thread")

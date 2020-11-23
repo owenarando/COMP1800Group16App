@@ -21,11 +21,8 @@ function create() {
             description: inputBody,
             member: 1,
         })
-
         onclick = alert("Group Created!");
     }
-
-
 }
 
 function cancel() {
