@@ -2,7 +2,6 @@
 // Puts the thread that the user selected on the database
 // then brings the user to the threadpage
 //----------------------------------------------------
-
 function enterGroup(groupID) {
   console.log('enterGroup()');
 
