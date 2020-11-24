@@ -120,7 +120,7 @@ function addFavorites() {
                                 item.className = "favoriteItem";
                                 item.className += " object";
 
-                                //Asigns assigns the ID of the button to the ID of the favorite post document
+                                //Asigns the ID of the button to the ID of the favorite post document
                                 //Makes the text of the button, the name of the favorite post
                                 item.id = `${postID}`;
                                 item.innerText = `${postName}`;

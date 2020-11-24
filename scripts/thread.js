@@ -47,7 +47,7 @@ function enterPost(postID) {
       //Navigating the the current users collections.
       db.collection("users").doc(user.uid).collection("current")
         .doc("currentPages")
-        
+
         //Sets the current post to the post id from the database.
         .update({
           currentPost: `${postID}`
@@ -146,7 +146,7 @@ function addPosts(groupIdInput, threadIdInput) {
 //---------------------------------------------------
 // Adds Redirect to creation page on button press
 //----------------------------------------------------
-function creationPage(){
+function creationPage() {
   document.location.href = "/COMP1800Group16App/creationPages/postCreation.html";
 }
 
@@ -155,7 +155,7 @@ const create = document.querySelector("#create");
 
 //Event listenter for the create button, on click 
 //calls the creationPage function.
-create.addEventListener('click', function(){
+create.addEventListener('click', function () {
   creationPage();
 });
 
