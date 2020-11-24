@@ -25,6 +25,7 @@
        <!----------------------------------------------->
         <!-- The Title and the Settings-->
         <!----------------------------------------------->
+        <div id = "upperSticky">
         <div id="upperBox">
             <div id="titleWrap">
                 <header id="title" class="object centerFlex">
@@ -65,9 +66,17 @@
         <div id="bottomHalf">
             <!-- ***THE ACTION BOX*** -->
             <section id="actionBox" class="centerFlex object">
-                <button id="comment" class="object">COMMENT</button>
-                <button id="favorite" class="object">FAVORITE</button>
-                <button id="like" class="object">LIKE</button>
+                <div id="buttonContain" class="object centerFlex">
+                    <button id="comment" class="object centerFlex">
+                        <i id="commentIcon" class="material-icons">add_comment</i>
+                    </button>
+                    <button id="favorite" class="object centerFlex">
+                        <i id="favoriteIcon" class="material-icons">favorite</i>
+                    </button>
+                    <button id="like" class="object centerFlex">
+                        <i id="likeIcon" class="material-icons">thumb_up</i>
+                    </button>
+                </div>
             </section>
 
             <!-- ***THE NAVBAR*** -->
@@ -91,7 +100,10 @@
         <!-- ***THE COMMENTS*** -->
         <section id="comments" class="object">
             <div class="object commentContain centerFlex">
-                <p id="likesTitle">LIKES: <span id=likes>7</span></p>
+                <div id="likesContain" class="object centerFlex">
+                    <div id="likesTitle" class="object centerFlex">LIKES</div>
+                    <div id=likes class="object centerFlex">7</div>
+                </div>
             </div>
             <!-- 
       <div class="object commentContain centerFlex">

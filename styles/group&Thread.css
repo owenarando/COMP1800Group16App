@@ -29,15 +29,13 @@ body {
     position: relative;
     background-color: var(--red);
 }
-
-
 /*The title*/
 #titleWrap{
     display: inline-block;
 }
 #title {
     width: 82%;
-    height: 95%;
+    height: 90%;
     background-color: var(--light1);
     position: absolute;
     left: 1%;
@@ -46,7 +44,7 @@ body {
 }
 
 h1 {
-    color: var(--dark)2;
+    color: var(--dark2);
     font-size: 2rem;
     text-align: center;
 }
