@@ -5,12 +5,12 @@
   margin: 0;
 }
 body{
-  background-color: black;
+  background-color: var(--dark2);
 }
 /***THE CONTENT BOX***/
 #content {
   height: calc(100%+12rem);
-  background: var(--background);
+  background: var(--dark2);
   width: 100vw;
   overflow: auto;
 }
@@ -64,9 +64,13 @@ h1 {
 /*------------------------------*/
 /*The Container*/
 #upperSticky{
- position: fixed;
- top:0px;
- width: 100%;
+    height: 3.5rem;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    background-color: var(--dark1);
+    z-index: 1;
 }
 #upperBox {
     height: 3.5rem;
@@ -75,14 +79,13 @@ h1 {
     background-color: var(--red);
 }
 
-
 /*The title*/
 #titleWrap{
     display: inline-block;
 }
 #title {
     width: 82%;
-    height: 95%;
+    height: 90%;
     background-color: var(--light1);
     position: absolute;
     left: 1%;
@@ -125,7 +128,7 @@ h1 {
   background-color: var(--level1);
   width: 100%;
   height: 25rem;
-  margin-top:0.75rem;
+  margin-top:4.5rem;
   margin-bottom: 0.75rem;
   position: relative;
 }
@@ -136,7 +139,7 @@ h1 {
   top: 10%;
   background-color: var(--level1);
   border: none;
-  color:white;
+  color:var(--light2);
 } 
 #postBodyContain{
   width: 97.5%;
@@ -145,7 +148,7 @@ h1 {
   top: 59%;
   background-color: var(--level1);
   border: none;
-  color:white;
+  color: var(--light2);
 }
 p{
   margin: 0;
@@ -187,22 +190,30 @@ p{
 }
 
 /***THE LIKES***/
-.likesContain {
+#likesContain {
   width: 95%;
-  min-height: 5rem;
-  border: none;
-  grid-row: span 1;
-  background-color: var(--level1);
+  height: 4.2rem;
+  background-color: var(--red);
+ justify-content: space-around;
 }
 #likesTitle {
-  width: 100%;
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
+    height: 85%;
+    width: 40%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 700;
+  
 }
 
 #likes {
-
+    height: 85%;
+    width: 40%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 700;
+   
 }
 
 /***THE ACTION BOX AND NAVBAR CONTAINER***/
@@ -212,7 +223,7 @@ p{
   bottom: 0px;
   left: 0px;
   position: fixed;
-  background-color: var(--background);
+  background-color: var(--dark2);
 }
 
 /***THE ACTION BOX***/
@@ -221,13 +232,19 @@ p{
   width: 100%;
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-  background-color: var(--level1);
-  justify-content: space-evenly;
+  background-color: var(--dark1);
+ 
+}
+#buttonContain{
+    width: 97.5%;
+    height: 85%;
+    justify-content: space-around;
+    background-color: var(--red);
 }
 #like{
   height: 85%;
   width: 30%;
-  background-color: var(--extra);
+  background-color: var(--light2);
   border: none;
   font-size: 1.3rem;
   font-weight: 500;
@@ -235,7 +252,7 @@ p{
 #favorite{
   height: 85%;
   width: 30%;
-  background-color: var(--favorite);
+  background-color: var(--light2);
   border: none;
   font-size: 1.3rem;
   font-weight: 500;
@@ -243,19 +260,94 @@ p{
 #comment{
   height: 85%;
   width: 30%;
-  background-color: var(--create);
+  background-color: var(--light2);
   border: none;
-  font-size: 1.3rem;
+  font-size: 3rem;
   font-weight: 500;
 }
-
-/***THE NAVBAR***/
-footer {
-  height: 5.5rem;
-  width: 100%;
-  background-color: var(--level1);
+#likeIcon{
+    font-size: 3rem;
+    color: var(--dark2);
 }
+#commentIcon{
+    font-size: 3rem;
+    color: var(--dark2);
+}
+#favoriteIcon{
+    font-size: 3rem;
+    color: var(--dark2);
+}
+
+/*-----------------------------*/
+/**The Navbar at the botton***/
+/*----------------------------*/
+/*Sticky footer for the navbar*/
+footer {
+    height: 5.5rem;
+    width: 100%;
+    background-color: var(--dark1);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 999;
+}
+
+/*The navbar*/
 nav {
-  height: 75%;
-  width: 97.5%;
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
+}
+
+/*The so that multiple buttons can be on the same row*/
+#homeContain {
+    display: inline;
+}
+/*The home button*/
+#home {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 100;
+}
+/*The home button icon*/
+#homeIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
+
+/*The so that multiple buttons can be on the same row*/
+#backContain {
+    display: inline;
+}
+/*The back button */
+#back {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/*The back button icon*/
+#backIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+    transform: scaleX(-1);
 }
