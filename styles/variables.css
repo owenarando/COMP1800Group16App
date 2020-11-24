@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 :root {
     --level1: rgba(255, 255, 255, 0.1);
     --level2: rgba(255, 255, 255, 0.07);
@@ -27,7 +28,8 @@
     --light2: #EBE7D9;
     --orange: #F55139;
     --red: #BA3521;
-
+    
+    --title: 'Montserrat', sans-serif;
 }
 
 .hidden {

@@ -9,34 +9,19 @@ body {
     background-color: black;
 }
 
-/***THE CONTENT BOX***/
+/*------------------------------------------------------*/
+/*The Content Box*/
+/*------------------------------------------------------*/
 #content {
     height: 100vh;
     background: var(--dark2);
     width: 100vw;
 }
 
-.hidden {
-    display: none;
-}
-
-/***CLASSES WITH MULTIPLE ELEMENTS***/
-.object {
-    border-radius: 0.25rem;
-    box-shadow: 0 0 8px #000000;
-}
-
-.centerFlex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-/*--------------------------------*/
-/***The Title and the Settings***/
-/*------------------------------*/
-/*The Container*/
+/*------------------------------------------------------*/
+/*The Title and the Settings*/
+/*------------------------------------------------------*/
+/*The Title*/
 #upperBox {
     height: 8%;
     width: 100%;
@@ -44,13 +29,8 @@ body {
     background-color: var(--red);
 }
 
-/*The title*/
-#titleWrap {
-    display: inline-block;
-}
-
 #title {
-    width: 82%;
+    width: calc(82%);
     height: 90%;
     background-color: var(--light1);
     position: absolute;
@@ -60,10 +40,17 @@ body {
 }
 
 h1 {
-    color: var(--dark)2;
-    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+    color: var(--dark2);
+    font-size: 3rem;
     text-align: center;
+    font-family: var(--title);
 }
+.n{
+    font-size: 4rem;
+}
+
 
 /*The Settings Button */
 #settingsWrap {
@@ -81,7 +68,6 @@ h1 {
     border: none;
 }
 
-/*The Settings Icon*/
 #gear {
     font-size: 3rem;
     color: var(--light2);
@@ -89,8 +75,9 @@ h1 {
     padding: 0;
 }
 
-
-/***FAVORITES***/
+/*------------------------------------------------------*/
+/*The Favorites Section*/
+/*------------------------------------------------------*/
 #favorite {
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -107,7 +94,7 @@ h1 {
 
 }
 
-/*FAVORITE ITEMS*/
+/*Created and inejected by javascript*/
 .favoriteItem {
     width: 95%;
     height: 100%;
@@ -116,20 +103,20 @@ h1 {
     grid-row: span 1;
     color: var(--dark2);
     font-size: 2rem;
+    font-family: var(--title);
     font-weight: 700;
 }
 
-
-
-
-/***GROUPS***/
+/*------------------------------------------------------*/
+/*The Groups Section*/
+/*------------------------------------------------------*/
 #groups {
     height: 56%;
     width: 100%;
     box-sizing: border-box;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    padding-top: 10%;
+    padding-top: 15%;
     background-color: var(--level1);
 
     display: grid;
@@ -141,71 +128,78 @@ h1 {
     overflow: auto;
 }
 
-/*GROUP*/
+/*Created and injected by javascript*/
 .group {
     box-sizing: border-box;
-    width: 6rem;
+    width: 7rem;
     height: 6rem;
     background-color: var(--light2);
     border: none;
     color: var(--dark2);
     font-size: 1.5rem;
     font-weight: 700;
+    font-family: var(--title);
 }
 
-
-
-/***THE ACTION BOX***/
-#actionBox {
-    height: 18%;
-    width: 100%;
-    margin-top: 2vh;
-    background-color: var(--level1);
-    justify-content: space-evenly;
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 2.5rem;
+    }
+    .n{
+        font-size: 3.5rem
+    }
+    .favoriteItem{
+        font-size: 1.75rem;
+    }
+    .group{
+        height: 6rem;
+        width: 6rem;
+    }
 }
 
-#join {
-    height: 85%;
-    width: 30%;
-    background-color: var(--extra);
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 500;
+@media only screen and (max-width: 1200px) and (min-width: 601px) {
+    h1{
+        font-size: 3.5rem;
+    }
+    .n{
+        font-size: 5rem
+    }
+    .favoriteItem{
+        font-size: 3rem;
+    }
+    .group{
+        height: 8rem;
+        width: 10rem;
+        font-size: 2.5rem;
+    }
+    #groups{
+        row-gap: 9rem;
+    }
+    #gear {
+        font-size: 4rem;
+    }
 }
 
-#create {
-    height: 85%;
-    width: 30%;
-    background-color: var(--create);
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-#remove {
-    height: 85%;
-    width: 30%;
-    background-color: var(--remove);
-    border: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-
-
-
-
-/***THE NAVBAR***/
-footer {
-    height: 12.5%;
-    width: 100%;
-    background-color: var(--level1);
-    bottom: 0px;
-    left: 0px;
-    position: fixed;
-}
-
-nav {
-    height: 75%;
-    width: 97.5%;
-
+@media only screen and (min-width: 1201px) {
+    h1{
+        font-size: 3.5rem;
+    }
+    .n{
+        font-size: 5rem
+    }
+    .favoriteItem{
+        font-size: 3rem;
+    }
+    .group{
+        height: 12rem;
+        width: 20rem;
+        font-size: 2.5rem;
+    }
+    #groups{
+        padding-top: 5%;
+        row-gap: 9rem;
+    }
+    #gear {
+        font-size: 5rem;
+    }
 }
