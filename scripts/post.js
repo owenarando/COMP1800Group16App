@@ -19,7 +19,7 @@ function createPage() {
           console.log("current thread ID: " + currentThreadID);
           console.log("current post ID: " + currentPostID);
           
-          //Calling the add fuctions to display trhe correct groups, threads, posts.
+          //Calling the add fuctions to display the correct groups, threads, posts.
           addTitle(currentGroupID, currentThreadID, currentPostID);
           addBody(currentGroupID, currentThreadID, currentPostID);
           addLikes(currentGroupID, currentThreadID, currentPostID);
@@ -49,7 +49,7 @@ function addTitle(groupIdInput, threadIdInput, postIdInput){
   .collection("post").doc(postIdInput)
   .get()
   .then(function (doc){
-    
+
     //Storing the name of the post in a variable.
     let name = doc.data().name;
     console.log(`Thread Name: ${name}`);
@@ -129,7 +129,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
         commentContainer.className += " commentContain";
         commentContainer.className += " centerFlex";
         
-        //Creates a p that will hold the comment.
+        //Creates a <p> that will hold the comment.
         comment = document.createElement("p");
         comment.className = "comment";
         comment.innerText = `${commentBody}`
@@ -294,5 +294,13 @@ function start() {
     }
   })
 }
+
+//---------------------------------------------------
+// Back Button, will re-direct to threads from posts page
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "thread.html";
+})
 
 start();

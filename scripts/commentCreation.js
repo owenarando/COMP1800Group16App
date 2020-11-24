@@ -122,6 +122,15 @@ function start() {
   })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to post from comment creation page
+//----------------------------------------------------
+/*
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "/COMP1800Group16App/post.html";
+})
+*/
 start();
 createComment();
 cancel();
