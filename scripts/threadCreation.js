@@ -133,6 +133,14 @@ function start() {
   })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to group from thread creation page.
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "/COMP1800Group16App/group.html";
+})
+
 start();
 createThread();
 cancel();

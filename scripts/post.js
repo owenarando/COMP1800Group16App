@@ -295,4 +295,12 @@ function start() {
   })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to threads from posts page
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "thread.html";
+})
+
 start();
