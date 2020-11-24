@@ -25,6 +25,18 @@
        <!----------------------------------------------->
         <!-- The Title and the Settings-->
         <!----------------------------------------------->
+<<<<<<< HEAD
+        <div id="upperSticky">
+            <div id="upperBox">
+                <header id="title" class="object centerFlex">
+                    <h1>GROUP TITLE</h1>
+                </header>
+
+                <button id="gearContain" class="object centerFlex">
+                    <i id="gear" class="material-icons">settings</i>
+                </button>
+            </div>
+=======
         <div id = "upperSticky">
         <div id="upperBox">
             <div id="titleWrap">
@@ -37,6 +49,7 @@
                 <i id="gear" class="material-icons">settings</i>
             </button>
         </div>
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
         </div>
 
         <!-- ***THE POPUP BUTTONS FROM COG BUTTON*** -->
@@ -70,10 +83,10 @@
                     <button id="comment" class="object centerFlex">
                         <i id="commentIcon" class="material-icons">add_comment</i>
                     </button>
-                    <button id="favorite" class="object centerFlex">
+                    <button onclick="favouriteToggle()" id="favorite" class="object centerFlex">
                         <i id="favoriteIcon" class="material-icons">favorite</i>
                     </button>
-                    <button id="like" class="object centerFlex">
+                    <button onclick="likeToggle()" id="like" class="object centerFlex">
                         <i id="likeIcon" class="material-icons">thumb_up</i>
                     </button>
                 </div>
@@ -81,6 +94,22 @@
 
             <!-- ***THE NAVBAR*** -->
             <footer class="object centerFlex">
+<<<<<<< HEAD
+                <!-- Header Navigation Bar -->
+                <nav class="object">
+                    <div id="homeContain">
+                        <button id="home" class="object centerFlex">
+                            <i id="homeIcon" class="material-icons">home</i>
+                        </button>
+                    </div>
+                    <div id="backContain">
+                        <button id="back" class="object centerFlex">
+                            <i id="backIcon" class="material-icons">forward</i>
+                        </button>
+                    </div>
+
+                </nav>
+=======
             <!-- Header Navigation Bar -->
             <nav class="object">
                 <div id="homeContain">
@@ -94,6 +123,7 @@
                     </button>
                 </div>
             </nav>
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
             </footer>
         </div>
 
@@ -154,6 +184,8 @@
     <!--------------------------------------------------------------------->
     <script src="scripts/firebaseApi.js"></script>
     <script src="scripts/post.js"></script>
+    <!-- <script src="scripts/clickButtonEffect.js"></script> -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/buttons.js"></script>
 

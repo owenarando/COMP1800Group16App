@@ -18,16 +18,21 @@ function createPage() {
           console.log("current group ID: " + currentGroupID);
           console.log("current thread ID: " + currentThreadID);
           console.log("current post ID: " + currentPostID);
+<<<<<<< HEAD
+
+          //Calling the add fuctions to display trhe correct groups, threads, posts.
+=======
           
           //Calling the add fuctions to display the correct groups, threads, posts.
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
           addTitle(currentGroupID, currentThreadID, currentPostID);
           addBody(currentGroupID, currentThreadID, currentPostID);
           addLikes(currentGroupID, currentThreadID, currentPostID);
           addComments(currentGroupID, currentThreadID, currentPostID);
-        }).then(function(){
+        }).then(function () {
 
           //Setting a timeout to allow everything to load in at the same time.
-          setTimeout(function(){
+          setTimeout(function () {
             $("#content").fadeIn(200);
           }, 300);
         });
@@ -42,10 +47,24 @@ function createPage() {
 // Adds the title to the post.
 // Accepts the groupID and threadID and postID as paramenters.
 //----------------------------------------------------
-function addTitle(groupIdInput, threadIdInput, postIdInput){
+function addTitle(groupIdInput, threadIdInput, postIdInput) {
 
   //Navigating to the post inside of a certain group and thread.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
+<<<<<<< HEAD
+    .collection("post").doc(postIdInput)
+    .get()
+    .then(function (doc) {
+
+      //Storing the name of the post in a variable.
+      let name = doc.data().name;
+      console.log(`Thread Name: ${name}`);
+
+      //Sets the text of the post the to name variable.
+      const title = document.querySelector('h1');
+      title.innerText = `${name}`;
+    });
+=======
   .collection("post").doc(postIdInput)
   .get()
   .then(function (doc){
@@ -58,50 +77,51 @@ function addTitle(groupIdInput, threadIdInput, postIdInput){
     const title = document.querySelector('h1');
     title.innerText = `${name}`;
   });
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
 }
 
 //---------------------------------------------------
 // Adds the body to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
-function addBody(groupIdInput, threadIdInput, postIdInput){
+function addBody(groupIdInput, threadIdInput, postIdInput) {
 
   //Navigating to the post inside of a certain group and thread.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-  .collection("post").doc(postIdInput)
-  .get()
-  .then(function (doc){
-    
-    //Storing the body of the post in a variable.
-    let body = doc.data().body;
-    console.log(`Post Body ${body}`);
+    .collection("post").doc(postIdInput)
+    .get()
+    .then(function (doc) {
 
-    //Sets the text of the body of a post to the body variable.
-    const postBody = document.querySelector('#postBody');
-    postBody.innerText = `${body}`;
-  });
+      //Storing the body of the post in a variable.
+      let body = doc.data().body;
+      console.log(`Post Body ${body}`);
+
+      //Sets the text of the body of a post to the body variable.
+      const postBody = document.querySelector('#postBody');
+      postBody.innerText = `${body}`;
+    });
 }
 
 //---------------------------------------------------
 // Adds likes to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
-function addLikes(groupIdInput, threadIdInput, postIdInput){
+function addLikes(groupIdInput, threadIdInput, postIdInput) {
 
   //Navigating to the post inside of a certain group and thread.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-  .collection("post").doc(postIdInput)
-  .get()
-  .then(function (doc){
-    
-    //Storing the likes in a variable.
-    let likes = doc.data().likes;
-    console.log(`likes: ${likes}`);
+    .collection("post").doc(postIdInput)
+    .get()
+    .then(function (doc) {
 
-    //Sets the amount of likes to the likes variable.
-    const postLikes = document.querySelector('#likes');
-    postLikes.innerText = `${likes}`;
-  });
+      //Storing the likes in a variable.
+      let likes = doc.data().likes;
+      console.log(`likes: ${likes}`);
+
+      //Sets the amount of likes to the likes variable.
+      const postLikes = document.querySelector('#likes');
+      postLikes.innerText = `${likes}`;
+    });
 }
 
 
@@ -118,7 +138,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
-        
+
         //Stores the comment in a variable.
         var commentBody = doc.data().body;
         console.log(`Comment Body: ${commentBody}`);
@@ -128,8 +148,13 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
         commentContainer.className = "object";
         commentContainer.className += " commentContain";
         commentContainer.className += " centerFlex";
+<<<<<<< HEAD
+
+        //Creates a p that will hold the comment.
+=======
         
         //Creates a <p> that will hold the comment.
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
         comment = document.createElement("p");
         comment.className = "comment";
         comment.innerText = `${commentBody}`
@@ -156,7 +181,7 @@ const create = document.querySelector("#comment");
 
 //EventListener that redirects user to comment creation when comment
 //button is clicked.
-create.addEventListener('click', function(){
+create.addEventListener('click', function () {
   creationPage();
 });
 
@@ -175,7 +200,6 @@ function favorite() {
           let currentPostID = doc.data().currentPost;
           let currentGroupID = doc.data().currentGroup;
           let currentThreadID = doc.data().currentThread;
-
 
           //Checks if the item is already in the favorites
           db.collection("users").doc(user.uid).collection("favorites")
@@ -243,8 +267,9 @@ function likePost() {
                       .update({
                         likes: firebase.firestore.FieldValue.increment(-1)
                       })
-                      console.log("like removed");
+                    console.log("like removed");
                   })
+
               } else {
                 console.log("like does not exist");
                 db.collection("users").doc(user.uid).collection("liked")
@@ -257,13 +282,13 @@ function likePost() {
                       .update({
                         likes: firebase.firestore.FieldValue.increment(1)
                       })
-                      console.log("like added");
+                    console.log("like added");
                   });
               }
             });
-            setTimeout(function(){
-              addLikes(currentGroupID, currentThreadID, currentPostID);
-             }, 700);
+          setTimeout(function () {
+            addLikes(currentGroupID, currentThreadID, currentPostID);
+          }, 700);
         });
     } else {
 
@@ -271,12 +296,170 @@ function likePost() {
   })
 }
 
-
 const like = document.querySelector("#like");
 like.addEventListener('click', function () {
   likePost();
 });
 
+/////////////////////////////////////////////////////////////
+//////// Initialize Like Button style base on Liked/not ///////
+/////////////////////////////////////////////////////////////
+/* Check if user "liked" the post, "likeButton" syle change base on T/F */
+function likeButton() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          db.collection("users").doc(user.uid).collection("liked")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                var likeButton = document.getElementById("like");
+                $(likeButton).children("i").css({
+                  "color": "#FFF5D0"
+                });
+                $(likeButton).css({
+                  "background-color": "#0F222D"
+                });
+              } else {
+                var likeButton = document.getElementById("like");
+                $(likeButton).children("i").css({
+                  "color": "#0F222D"
+                });
+                $(likeButton).css({
+                  "background-color": "#FFF5D0"
+                });
+              }
+            });
+
+        });
+    } else {}
+  })
+}
+likeButton();
+
+/////////////////////////////////////////////////
+///////////////Toggle Like button//////////////
+/////////////////////////////////////////////////
+function likeToggle() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          db.collection("users").doc(user.uid).collection("liked")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                var likeButton = document.getElementById("like");
+                $(likeButton).children("i").css({
+                  "color": "#0F222D"
+                });
+                $(likeButton).css({
+                  "background-color": "#FFF5D0"
+                });
+              } else {
+                var likeButton = document.getElementById("like");
+                $(likeButton).children("i").css({
+                  "color": "#FFF5D0"
+                });
+                $(likeButton).css({
+                  "background-color": "#0F222D"
+                });
+              }
+            });
+        });
+    } else {}
+  });
+}
+
+/////////////////////////////////////////////////////////////
+//////// Initialize Favourite Button style  ///////
+/////////////////////////////////////////////////////////////
+function favoriteBtn() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      //Reads from the database to find out what the current pages are
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          //Checks if the item is already in the favorites
+          db.collection("users").doc(user.uid).collection("favorites")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                var fav = document.getElementById("favorite");
+                $(fav).children("i").css({
+                  "color": "#FFF5D0"
+                });
+                $(fav).css({
+                  "background-color": "#0F222D"
+                });
+              } else {
+                var fav = document.getElementById("favorite");
+                $(fav).children("i").css({
+                  "color": "#0F222D"
+                });
+                $(fav).css({
+                  "background-color": "#FFF5D0"
+                });
+              }
+            })
+        });
+    } else {}
+  });
+}
+favoriteBtn();
+
+/////////////////////////////////////////////////
+///////////////Toggle favorite button//////////////
+/////////////////////////////////////////////////
+function favouriteToggle() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      //Reads from the database to find out what the current pages are
+      db.collection("users").doc(user.uid).collection("current")
+        .doc("currentPages")
+        .get()
+        .then(function (doc) {
+          let currentPostID = doc.data().currentPost;
+          //Checks if the item is already in the favorites
+          db.collection("users").doc(user.uid).collection("favorites")
+            .doc(`${currentPostID}`)
+            .get()
+            .then(function (doc) {
+              if (doc.exists) {
+                var fav = document.getElementById("favorite");
+                $(fav).children("i").css({
+                  "color": "#0F222D"
+                });
+                $(fav).css({
+                  "background-color": "#FFF5D0"
+                });
+              } else {
+                var fav = document.getElementById("favorite");
+                $(fav).children("i").css({
+                  "color": "#FFF5D0"
+                });
+                $(fav).css({
+                  "background-color": "#0F222D"
+                });
+              }
+            })
+        });
+    } else {}
+  });
+}
 
 
 //---------------------------------------------------

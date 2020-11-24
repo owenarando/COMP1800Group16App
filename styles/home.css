@@ -23,10 +23,10 @@ body {
 /*------------------------------------------------------*/
 /*The Title*/
 #upperBox {
-    height: 8%;
-    width: 100%;
-    position: relative;
-    background-color: var(--red);
+  height: 8%;
+  width: 100%;
+  position: relative;
+  background-color: var(--red);
 }
 
 #title {
@@ -58,21 +58,21 @@ h1 {
 }
 
 #gearContain {
-    width: 15%;
-    height: 95%;
-    background-color: var(--red);
-    position: absolute;
-    right: 1%;
-    top: 50%;
-    transform: translate(0, -50%);
-    border: none;
+  width: 15%;
+  height: 95%;
+  background-color: var(--red);
+  position: absolute;
+  right: 1%;
+  top: 50%;
+  transform: translate(0, -50%);
+  border: none;
 }
 
 #gear {
-    font-size: 3rem;
-    color: var(--light2);
-    margin: 0;
-    padding: 0;
+  font-size: 3rem;
+  color: var(--light2);
+  margin: 0;
+  padding: 0;
 }
 
 /*------------------------------------------------------*/
