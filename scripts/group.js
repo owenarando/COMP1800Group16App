@@ -33,7 +33,6 @@ function createPage() {
 //----------------------------------------------------
 function enterThread(threadID) {
   console.log('enterThread()');
-
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       //console.log("user is signed in");
@@ -81,6 +80,7 @@ function addDescription(currentGroupID){
     title.innerText = `${description}`;
   });
 }
+
 //---------------------------------------------------
 // Adds the threads
 //----------------------------------------------------
@@ -103,7 +103,7 @@ function addThreads(currentGroupID) {
         item.className = "gridItem";
         item.className += " object";
 
-        //Asigns the id of the thread to the html ID
+        //Assigns the id of the thread to the html ID
         item.id = `${threadID}`;
         item.innerText = threadName;
 
@@ -134,35 +134,6 @@ create.addEventListener('click', function(){
 // createPage()
 //----------------------------------------------------
 
-
-//---------------------------------------------------
-// JQuery that displays settings when cog button is clicked
-//----------------------------------------------------
-
-$(document).ready(function () {
-  $("#settings").hide();
-  $("#cog").on("click", () => {
-    $("#settings").toggle();
-  });
-});
-
-
-//---------------------------------------------------
-// Log user out
-//----------------------------------------------------
-
-const auth = firebase.auth();
-const logout = document.querySelector('#logout');
-
-logout.addEventListener('click', (e) => {
-  e.preventDefault();
-  auth.signOut().then(() => {
-    console.log("User signed out");
-    document.location.href = "login2.html";
-  });
-});
-
-
 function start() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
@@ -175,6 +146,13 @@ function start() {
   })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to home from group page
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "home.html";
+})
 start();
 
 

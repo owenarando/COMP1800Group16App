@@ -18,8 +18,13 @@ function createPage() {
           console.log("current group ID: " + currentGroupID);
           console.log("current thread ID: " + currentThreadID);
           console.log("current post ID: " + currentPostID);
+<<<<<<< HEAD
 
           //Calling the add fuctions to display trhe correct groups, threads, posts.
+=======
+          
+          //Calling the add fuctions to display the correct groups, threads, posts.
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
           addTitle(currentGroupID, currentThreadID, currentPostID);
           addBody(currentGroupID, currentThreadID, currentPostID);
           addLikes(currentGroupID, currentThreadID, currentPostID);
@@ -46,6 +51,7 @@ function addTitle(groupIdInput, threadIdInput, postIdInput) {
 
   //Navigating to the post inside of a certain group and thread.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
+<<<<<<< HEAD
     .collection("post").doc(postIdInput)
     .get()
     .then(function (doc) {
@@ -58,6 +64,20 @@ function addTitle(groupIdInput, threadIdInput, postIdInput) {
       const title = document.querySelector('h1');
       title.innerText = `${name}`;
     });
+=======
+  .collection("post").doc(postIdInput)
+  .get()
+  .then(function (doc){
+
+    //Storing the name of the post in a variable.
+    let name = doc.data().name;
+    console.log(`Thread Name: ${name}`);
+
+    //Sets the text of the post the to name variable.
+    const title = document.querySelector('h1');
+    title.innerText = `${name}`;
+  });
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
 }
 
 //---------------------------------------------------
@@ -128,8 +148,13 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
         commentContainer.className = "object";
         commentContainer.className += " commentContain";
         commentContainer.className += " centerFlex";
+<<<<<<< HEAD
 
         //Creates a p that will hold the comment.
+=======
+        
+        //Creates a <p> that will hold the comment.
+>>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
         comment = document.createElement("p");
         comment.className = "comment";
         comment.innerText = `${commentBody}`
@@ -452,5 +477,13 @@ function start() {
     }
   })
 }
+
+//---------------------------------------------------
+// Back Button, will re-direct to threads from posts page
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "thread.html";
+})
 
 start();

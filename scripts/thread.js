@@ -175,4 +175,12 @@ function start() {
   })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to group from thread page
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "group.html";
+})
+
 start();

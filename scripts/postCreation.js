@@ -136,6 +136,14 @@ function start() {
     })
 }
 
+//---------------------------------------------------
+// Back Button, will re-direct to thread from post creation page.
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "/COMP1800Group16App/thread.html";
+})
+
 start();
 createPost();
 cancel();
