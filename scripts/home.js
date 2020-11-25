@@ -147,7 +147,7 @@ function addFavorites() {
         } else {
             //If the user is not signed in, bring them to the login
             console.log("no user is signed in");
-            document.location.href = "login2.html"
+            document.location.href = "index.html"
         }
     })
 }
@@ -168,7 +168,7 @@ function start() {
             createPage();
         } else {
             console.log("No user signed in, loading login page");
-            document.location.href = "login2.html"
+            document.location.href = "index.html"
         }
     })
 }

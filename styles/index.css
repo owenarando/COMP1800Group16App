@@ -1,153 +1,56 @@
 @import url(https://fonts.googleapis.com/css?family=Hind);
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
-/***THE CONTENT BOX***/
+
+body {
+    background-color: var(--dark2);
+}
+
+/*------------------------------------------------------*/
+/*The content box/
+/*------------------------------------------------------*/
 #content {
-  height: 100vh;
-  background: var(--background);
-  width: 100vw;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
 }
 
-
-
-/***CLASSES WITH MULTIPLE ELEMENTS***/
-.object{
-  border-radius: 0.25rem;
-  box-shadow: 0 0 8px  #000000;
-}
-.centerFlex{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/*------------------------------------------------------*/
+/*The logo
+/*------------------------------------------------------*/
+#logoContainer {
+    width: 95%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-
-/***THE TITLE BOX***/
-#title {
-  width: 100%;
-  height: 8%;
-  background-color: var(--level1);
-}
-h1 {
-  font-size: 100%;
-  color: white;
-  font-size: 2.5rem;
+img {
+    width: 100%;
 }
 
-
-
-/***FAVORITES***/
-#favorite {
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  box-sizing: border-box;
-  padding-top: 2.5%;
-  height: 25%;
-  width: 100%;
-  background-color: var(--level1);
-  display: grid;
-  grid-auto-rows: 5rem;
-  row-gap: 1rem;
-  place-items: center;
-  overflow: auto;
-  
-}
-/*FAVORITE ITEMS*/
-.favoriteItem{
-  width: 95%;
-  height: 100%;
-  background-color: var(--level1);
-  border: none;
-  grid-row: span 1;
-  color: white;
-  font-size: 2rem;
+/*------------------------------------------------------*/
+/*Firebase Authentication Window*/
+/*------------------------------------------------------*/
+#firebaseui-auth-container {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-
-
-
-/***GROUPS***/
-#groups {
-  height: 42%;
-  width: 100%;
-  box-sizing: border-box;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  padding-top: 2.5%;
-  background-color: var(--level1);
-  
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: 6rem;
-  row-gap: 1rem;
-  column-gap: 1rem;
-  place-items: center;
-  overflow: auto;
-}
-/*GROUP*/
-.group{
-  width: 6rem;
-  height: 6rem;
-  background-color: var(--level1);
-  border: none;
-  color: white;
-  font-size: 1.5rem;
+@media only screen and (min-width: 800px) {
+    #logoContainer {
+        width: 70%;
+    }
 }
 
-
-
-/***THE ACTION BOX***/
-#actionBox{
-  height: 18%;
-  width: 100%;
-  margin-top: 2vh;
-  background-color: var(--level1);
-  justify-content: space-evenly;
-}
-#join{
-  height: 85%;
-  width: 30%;
-  background-color: var(--extra);
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#create{
-  height: 85%;
-  width: 30%;
-  background-color: var(--create);
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-#remove{
-  height: 85%;
-  width: 30%;
-  background-color: var(--remove);
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-
-
-
-
-/***THE NAVBAR***/
-footer {
-  height: 12.5%;
-  width: 100%;
-  background-color: var(--level1);
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
-}
-
-nav {
-  height: 75%;
-  width: 97.5%;
-  
+@media only screen and (min-width: 1200px) {
+    #logoContainer {
+        width: 50%;
+    }
 }

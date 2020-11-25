@@ -1,5 +1,3 @@
-
-
 //---------------------------------------------------------------
 //This funciton takes user input from the
 //creating a post page and writes the new info into the database.
@@ -120,7 +118,7 @@ function start() {
             createPage();
         } else {
             console.log("No user signed in, loading login page");
-            document.location.href = "/COMP1800Group16App/login2.html"
+            document.location.href = "/COMP1800Group16App/index.html"
         }
     })
 }

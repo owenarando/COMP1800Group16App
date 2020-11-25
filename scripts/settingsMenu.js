@@ -38,7 +38,7 @@ yes.addEventListener('click', (e) => {
   e.preventDefault();
   auth.signOut().then(() => {
     console.log("User signed out");
-    document.location.href = "login2.html";
+    document.location.href = "index.html";
   });
 });
 

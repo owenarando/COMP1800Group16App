@@ -55,7 +55,7 @@ function addTitle(groupIdInput, threadIdInput, postIdInput) {
             console.log(`Thread Name: ${name}`);
 
             //Sets the text of the post the to name variable.
-            const title = document.querySelector('h1');
+            const title = document.querySelector('#titleText');
             title.innerText = `${name}`;
         });
 }
@@ -79,6 +79,7 @@ function addBody(groupIdInput, threadIdInput, postIdInput) {
             //Sets the text of the body of a post to the body variable.
             const postBody = document.querySelector('#postBody');
             postBody.innerText = `${body}`;
+
         });
 }
 
@@ -114,7 +115,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
 
     //Navigating to the comments for a certain post.
     db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-        .collection("post").doc(postIdInput).collection("comment")
+        .collection("post").doc(postIdInput).collection("comment").orderBy("time", "desc")
         .get()
         .then((snap) => {
             snap.forEach((doc) => {
@@ -360,82 +361,82 @@ function likeToggle() {
 /////////////////////////////////////////////////////////////
 function favoriteBtn() {
     firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        //Reads from the database to find out what the current pages are
-        db.collection("users").doc(user.uid).collection("current")
-          .doc("currentPages")
-          .get()
-          .then(function (doc) {
-            let currentPostID = doc.data().currentPost;
-            //Checks if the item is already in the favorites
-            db.collection("users").doc(user.uid).collection("favorites")
-              .doc(`${currentPostID}`)
-              .get()
-              .then(function (doc) {
-                if (doc.exists) {
-                  var fav = document.getElementById("favorite");
-                  $(fav).children("i").css({
-                    "color": "#FFF5D0"
-                  });
-                  $(fav).css({
-                    "background-color": "#0F222D"
-                  });
-                } else {
-                  var fav = document.getElementById("favorite");
-                  $(fav).children("i").css({
-                    "color": "#0F222D"
-                  });
-                  $(fav).css({
-                    "background-color": "#FFF5D0"
-                  });
-                }
-              })
-          });
-      } else {}
+        if (user) {
+            //Reads from the database to find out what the current pages are
+            db.collection("users").doc(user.uid).collection("current")
+                .doc("currentPages")
+                .get()
+                .then(function (doc) {
+                    let currentPostID = doc.data().currentPost;
+                    //Checks if the item is already in the favorites
+                    db.collection("users").doc(user.uid).collection("favorites")
+                        .doc(`${currentPostID}`)
+                        .get()
+                        .then(function (doc) {
+                            if (doc.exists) {
+                                var fav = document.getElementById("favorite");
+                                $(fav).children("i").css({
+                                    "color": "#FFF5D0"
+                                });
+                                $(fav).css({
+                                    "background-color": "#0F222D"
+                                });
+                            } else {
+                                var fav = document.getElementById("favorite");
+                                $(fav).children("i").css({
+                                    "color": "#0F222D"
+                                });
+                                $(fav).css({
+                                    "background-color": "#FFF5D0"
+                                });
+                            }
+                        })
+                });
+        } else {}
     });
-  }
-  favoriteBtn();
-  
-  /////////////////////////////////////////////////
-  ///////////////Toggle favorite button//////////////
-  /////////////////////////////////////////////////
-  function favouriteToggle() {
+}
+favoriteBtn();
+
+/////////////////////////////////////////////////
+///////////////Toggle favorite button//////////////
+/////////////////////////////////////////////////
+function favouriteToggle() {
     firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        //Reads from the database to find out what the current pages are
-        db.collection("users").doc(user.uid).collection("current")
-          .doc("currentPages")
-          .get()
-          .then(function (doc) {
-            let currentPostID = doc.data().currentPost;
-            //Checks if the item is already in the favorites
-            db.collection("users").doc(user.uid).collection("favorites")
-              .doc(`${currentPostID}`)
-              .get()
-              .then(function (doc) {
-                if (doc.exists) {
-                  var fav = document.getElementById("favorite");
-                  $(fav).children("i").css({
-                    "color": "#0F222D"
-                  });
-                  $(fav).css({
-                    "background-color": "#FFF5D0"
-                  });
-                } else {
-                  var fav = document.getElementById("favorite");
-                  $(fav).children("i").css({
-                    "color": "#FFF5D0"
-                  });
-                  $(fav).css({
-                    "background-color": "#0F222D"
-                  });
-                }
-              })
-          });
-      } else {}
+        if (user) {
+            //Reads from the database to find out what the current pages are
+            db.collection("users").doc(user.uid).collection("current")
+                .doc("currentPages")
+                .get()
+                .then(function (doc) {
+                    let currentPostID = doc.data().currentPost;
+                    //Checks if the item is already in the favorites
+                    db.collection("users").doc(user.uid).collection("favorites")
+                        .doc(`${currentPostID}`)
+                        .get()
+                        .then(function (doc) {
+                            if (doc.exists) {
+                                var fav = document.getElementById("favorite");
+                                $(fav).children("i").css({
+                                    "color": "#0F222D"
+                                });
+                                $(fav).css({
+                                    "background-color": "#FFF5D0"
+                                });
+                            } else {
+                                var fav = document.getElementById("favorite");
+                                $(fav).children("i").css({
+                                    "color": "#FFF5D0"
+                                });
+                                $(fav).css({
+                                    "background-color": "#0F222D"
+                                });
+                            }
+                        })
+                });
+        } else {}
     });
-  }
-  
+}
+
 
 //---------------------------------------------------
 // When the page starts
@@ -448,7 +449,7 @@ function start() {
             createPage();
         } else {
             console.log("No user signed in, loading login page");
-            document.location.href = "login2.html"
+            document.location.href = "index.html"
         }
     })
 }
@@ -461,8 +462,6 @@ home.addEventListener('click', (e) => {
     e.preventDefault();
     document.location.href = "/COMP1800Group16App/home.html";
 });
-
-
 //---------------------------------------------------
 // Back Button, will re-direct to threads from posts page
 //----------------------------------------------------

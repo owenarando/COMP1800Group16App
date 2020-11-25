@@ -1,9 +1,11 @@
 //---------------------------------------------------------------
 //This funciton takes user input from the
-//creating a comment page and writes the new info into the database.
+//creating a thead page and writes the new info into the database.
 //---------------------------------------------------------------
-function writeToDatabse() {
+function writeToDatabase() {
   firebase.auth().onAuthStateChanged(function (user) {
+
+    //If the user is signed in continue.
     if (user) {
       console.log("User Signed In");
 
@@ -13,24 +15,21 @@ function writeToDatabse() {
         .get()
         .then(function (doc) {
 
-          //Variables that store the current group, thread IDs.
+          //Variable that stores the current group ID.
           let currentGroupID = doc.data().currentGroup;
           console.log("current group ID: " + currentGroupID);
-          let currentThreadID = doc.data().currentThread;
-          console.log("current thread ID: " + currentThreadID);
-          let currentPostID = doc.data().currentPost;
-          console.log("current thread ID: " + currentThreadID);
 
-          //Variable that stores the input field for commenting.
-          let body = document.getElementById("inputBody").value;
+          //Variable that stores the user inputed thread title and body
+          //from the input field in threadCreation.html.
+          let name = document.getElementById("inputTitle").value.toUpperCase();
+          let description = document.getElementById("inputBody").value;
 
-          //Navigating to the current group, thread, post and comment collection.
-          //Setting the comment to the variable storing comment input.
+          //Navigating to the current group and thread colllecion,
+          //setting the thread title and description to variables storing user input.
           db.collection("group").doc(currentGroupID).collection("thread")
-            .doc(currentThreadID).collection("post").doc(currentPostID)
-            .collection("comment")
             .add({
-              "body": body,
+              "name": name,
+              "description": description
             });
           console.log("Updated Databse");
         });
@@ -38,40 +37,41 @@ function writeToDatabse() {
       console.log("no user is signed in");
     }
   });
-};
+}
 
 //---------------------------------------------------------------
 //This function adds an event listener on the create button in 
-//commentCreation.html. If any of the input fields are blank or 
+//threadCreation.html. If any of the input fields are blank or 
 //less than the specified length an error will appear. If the input
 //meets the requirements this function calls the writeToDataBase function
 //and writes the user input to the database.
 //---------------------------------------------------------------
-function createComment() {
+function createThread() {
   document.getElementById("create").addEventListener("click", function (e) {
     e.preventDefault();
 
-    //Grabbing the input field.
-    let body = document.getElementById("inputBody");
+    //Grabbing the input fields.
+    let name = document.getElementById("inputTitle");
+
     //Booleans for the input field checks.
-    let bodyPass = false;
+    let titlePass = false;
 
     //Changes the input background to show invalid input and throws a window error
     //if requirements not met.
-    if (body.value === '') {
-      window.alert("comment cannot be empty");
-      body.style.backgroundColor = "var(--error)";
+    if (name.value === '') {
+      name.style.backgroundColor = "var(--error)";
     } else {
-      bodyPass = true;
-      body.style.backgroundColor = "var(--input)"
+      titlePass = true;
+      name.style.backgroundColor = "var(--input)"
     }
 
     //If the requirements are met, calls the writeToDataBase() function
-    //then redirects to post page.
-    if (bodyPass) {
-      writeToDatabse();
+    //then redirects to group page.
+    if (titlePass) {
+        console.log("Writing to the databse");
+      writeToDatabase();
       setTimeout(function () {
-        document.location.href = "/COMP1800Group16App/post.html";
+      document.location.href = "/COMP1800Group16App/group.html";
       }, 1000);
     }
   });
@@ -88,7 +88,7 @@ function cancel() {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         console.log("CancelButton Added");
-        document.location.href = "/COMP1800Group16App/post.html";
+        document.location.href = "/COMP1800Group16App/group.html";
       } else {
         console.log("no user is signed in");
       }
@@ -117,7 +117,7 @@ function start() {
       createPage();
     } else {
       console.log("No user signed in, loading login page");
-      document.location.href = "/COMP1800Group16App/login2.html"
+      document.location.href = "/COMP1800Group16App/index.html"
     }
   })
 }
@@ -132,14 +132,15 @@ home.addEventListener('click', (e) => {
   document.location.href = "/COMP1800Group16App/home.html";
 });
 
+
 //---------------------------------------------------
-// Back Button, will re-direct to thread from post creation page.
+// Back Button, will re-direct to group from thread creation page.
 //----------------------------------------------------
 const backBtn = document.getElementById("back");
 backBtn.addEventListener('click', () => {
-  document.location.href = "/COMP1800Group16App/thread.html";
+  document.location.href = "/COMP1800Group16App/group.html";
 })
 
 start();
-createComment();
+createThread();
 cancel();

@@ -189,21 +189,13 @@ body {
     position: relative;
 }
 
-#postTitleContain {
-    width: 97.5%;
-    height: 15%;
-    resize: none;
-    top: 10%;
-    background-color: var(--level1);
-    border: none;
-    color: var(--light2);
-}
+
 
 #postBodyContain {
     width: 97.5%;
-    height: 77%;
+    height: 95%;
     resize: none;
-    top: 59%;
+    top: 50%;
     background-color: var(--level1);
     border: none;
     color: var(--light2);

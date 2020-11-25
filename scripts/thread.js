@@ -176,7 +176,7 @@ function start() {
       createPage();
     } else {
       console.log("No user signed in, loading login page");
-      document.location.href = "login2.html"
+      document.location.href = "index.html"
     }
   })
 }
