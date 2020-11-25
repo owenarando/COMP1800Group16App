@@ -83,6 +83,12 @@ function addGroups() {
 
                 //When the user clicks on the button it calls enterGroup()
                 //and enters its HTML ID attribute as the parameter
+                $(item).on('click', () =>{
+                    $(event.currentTarget).css({
+                        "background-color": "var(--dark2)",
+                        "color": "var(--light2)"
+                    });
+                })
                 item.setAttribute("onclick", "enterGroup(this.id)");
                 $("#groups").prepend(item);
             });
@@ -127,6 +133,12 @@ function addFavorites() {
 
                                 //When the user clicks on the button it calls enterFavorite()
                                 //and enters its HTML ID attribute as the parameter
+                                $(item).on('click', () =>{
+                                    $(event.currentTarget).css({
+                                        "background-color": "var(--dark2)",
+                                        "color": "var(--light2)"
+                                    });
+                                })
                                 item.setAttribute("onclick", "enterFavorite(this.id)");
                                 $("#favorite").prepend(item);
                             });

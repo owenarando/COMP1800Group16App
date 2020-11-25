@@ -1,152 +1,147 @@
 @import url(https://fonts.googleapis.com/css?family=Hind);
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
-body{
-  background-color: black;
+
+/*------------------------------------------------------*/
+/*The Body*/
+/*------------------------------------------------------*/
+body {
+    background-color: var(--dark2);
 }
-/***THE CONTENT BOX***/
+
+/*------------------------------------------------------*/
+/*The Content Box*/
+/*------------------------------------------------------*/
 #content {
-  height: calc(100%+12rem);
-  background: var(--background);
-  width: 100vw;
-  overflow: auto;
+    height: calc(100%+12rem);
+    background: var(--dark2);
+    width: 100vw;
+    overflow: auto;
 }
 
-.hidden{
-  display: none;
+.hidden {
+    display: none;
 }
 
-
-/***CLASSES WITH MULTIPLE ELEMENTS***/
-.object{
-  border-radius: 0.25rem;
-  box-shadow: 0 0 8px  #000000;
+/*------------------------------------------------------*/
+/*Classes With Multiple Elements*/
+/*------------------------------------------------------*/
+.object {
+    border-radius: 0.25rem;
+    box-shadow: 0 0 8px #000000;
 }
+
 /*FLEXBOX FOR ALIGNING/CENTERING CHILDREN*/
-.centerFlex{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.centerFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 /*ALIGNING/CENTERING TEXT INPUTS*/
-.centerPosition{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.centerPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
 /*TEXT INPUT TEXT PROPERTIIES*/
-.textInput{
-  text-align: center;
-  font-size: 2rem;
+.textInput {
+    text-align: center;
+    font-size: 2rem;
 }
 
 
 
+/*------------------------------------------------------*/
+/*The Title and the Settings*/
+/*------------------------------------------------------*/
 
-/***THE TITLE BOX
-#pageTitle {
-  width: 100%;
-  height: 3.5rem;
-  background-color: var(--level1);
-}
-h1 {
-  font-size: 100%;
-  color: white;
-  font-size: 3rem;
-}
-***/
-/*--------------------------------*/
-/***The Title and the Settings***/
-/*------------------------------*/
-/*The Container*/
-#upperSticky{
- position: fixed;
- top:0px;
- width: 100%;
-}
 #upperBox {
-    height: 3.5rem;
+    height: 3.25rem;
     width: 100%;
     position: relative;
     background-color: var(--red);
 }
 
-
-/*The title*/
-#titleWrap{
-    display: inline-block;
-}
 #title {
-    width: 82%;
-    height: 95%;
+    width: calc(82%);
+    height: 90%;
     background-color: var(--light1);
     position: absolute;
     left: 1%;
     top: 50%;
     transform: translate(0, -50%);
-}
-h1 {
-    color: var(--dark)2;
-    font-size: 2rem;
-    text-align: center;
+    font-size: 1.5rem;
 }
 
-/*The Settings Button */
-/*The Settings Button */
-#settingsWrap{
-  display: inline-block;
+#titleText {
+    margin: 0;
+    padding: 0;
+    color: var(--dark2);
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: var(--title);
+}
+
+
+#settingsWrap {
+    display: inline-block;
 }
 
 #gearContain {
-  width: 15%;
-  height: 95%;
-  background-color: var(--red);
-  position: absolute;
-  right: 1%;
-  top: 50%;
-  transform: translate(0, -50%);
-  border: none;
+    width: 15%;
+    height: 95%;
+    background-color: var(--red);
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
 }
 
-/*The Settings Icon*/
 #gear {
-  font-size: 3rem;
-  color: var(--light2);
-  margin: 0;
-  padding: 0;
+    font-size: 3rem;
+    color: var(--light2);
+    margin: 0;
+    padding: 0;
 }
 
+/*------------------------------------------------------*/
+/*The Settings PopUp Menu*/
+/*------------------------------------------------------*/
 #settings {
-  background-color: var(--dark2);
-  border-radius: 0.5rem;
-  box-shadow: 0 0 8px  #000000;
-  height: 80vh;
-  width: 90vw;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  z-index: 1000;
+    background-color: var(--dark2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px #000000;
+    height: 80vh;
+    width: 90vw;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1000;
 }
 
 .popUpButtons {
-  width: 95%;
-  height: 10%;
-  margin-top: 10px;
-  margin-left: 2.5%;
-  background-color: var(--light2);
-  border: none;
-  border-radius: 0.25rem;
-  color: #000000;
-  font-size: 2rem;
+    width: 95%;
+    height: 10%;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    background-color: var(--light2);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--dark2);
+    font-size: 2rem;
+    font-family: var(--body);
 }
 
-  /*  Confirm Logout  */
-  .popUpButtonsYN {
+
+.popUpButtonsYN {
     width: 45%;
     margin-top: 10px;
     margin-left: 2.5%;
@@ -154,246 +149,289 @@ h1 {
     background-color: var(--light2);
     border: none;
     border-radius: 0.25rem;
-    color: #000000;
+    color: var(--dark2);
+    font-family: var(--body);
     font-size: 2rem;
 }
 
 #confirmLog {
+    display: inline-block;
     border-radius: 0.5rem;
-    box-shadow: 0 0 8px  #000000;
+    box-shadow: 0 0 8px #000000;
     width: 80vw;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
     z-index: 1000;
-  }
-
-#confirmText {
-  color: white;
 }
 
-#cconfirmText {
+#confirmText h2 {
+    color: var(--light2);
+    font-family: var(--body);
+}
+
+#confirmText {
     display: flex;
     justify-content: center;
 }
 
 
-/***THE POST***/
-#post{
-  background-color: var(--level1);
-  width: 100%;
-  height: 25rem;
-  margin-top:0.75rem;
-  margin-bottom: 0.75rem;
-  position: relative;
+/*------------------------------------------------------*/
+/*The Post*/
+/*------------------------------------------------------*/
+#post {
+    background-color: var(--level1);
+    width: 100%;
+    height: 25rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    position: relative;
 }
-#postTitleContain{
-  width: 97.5%;
-  height: 15%;
-  resize: none;
-  top: 10%;
-  background-color: var(--level1);
-  border: none;
-  color:white;
-} 
-#postBodyContain{
-  width: 97.5%;
-  height: 77%;
-  resize: none;
-  top: 59%;
-  background-color: var(--level1);
-  border: none;
-  color:white;
+
+#postTitleContain {
+    width: 97.5%;
+    height: 15%;
+    resize: none;
+    top: 10%;
+    background-color: var(--level1);
+    border: none;
+    color: var(--light2);
 }
-p{
-  margin: 0;
+
+#postBodyContain {
+    width: 97.5%;
+    height: 77%;
+    resize: none;
+    top: 59%;
+    background-color: var(--level1);
+    border: none;
+    color: var(--light2);
 }
-#postBody{
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+
+p {
+    margin: 0;
+    font-family: var(--body);
+}
+
+#postBody {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: var(--body);
+    text-align: left;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    overflow-wrap: break-word;
 }
 
 
 
-/***THE COMMENTS***/
+/*------------------------------------------------------*/
+/*The Comments*/
+/*------------------------------------------------------*/
 #comments {
-  margin-top: 0.75rem;
-  margin-bottom: 12.5rem;
-  box-sizing: border-box;
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
-  width: 100%;
-  background-color: var(--level1);
-  display: grid;
-  grid-auto-rows: minmax(5rem, auto);
-  row-gap: 1rem;
-  place-items: center;
-}
-.commentContain{
-  width: 95%;
-  min-height: 5rem;
-  border: none;
-  grid-row: span 1;
-  background-color: var(--level1);
-}
-.comment{
-  width: 100%;
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
+    margin-top: 0.75rem;
+    margin-bottom: 12.5rem;
+    box-sizing: border-box;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+    width: 100%;
+    background-color: var(--level1);
+    display: grid;
+    grid-auto-rows: minmax(5rem, auto);
+    row-gap: 1rem;
+    place-items: center;
 }
 
-/***THE LIKES***/
-.likesContain {
-  width: 95%;
-  min-height: 5rem;
-  border: none;
-  grid-row: span 1;
-  background-color: var(--level1);
+.commentContain {
+    width: 95%;
+    min-height: 5rem;
+    border: none;
+    grid-row: span 1;
+    background-color: var(--level1);
+    overflow: hidden;
 }
+
+.comment {
+    width: 100%;
+    color: white;
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 2.5%;
+    overflow-wrap: break-word;
+}
+
+/*------------------------------------------------------*/
+/*The Likes*/
+/*------------------------------------------------------*/
+#likesContain {
+    width: 95%;
+    height: 4.2rem;
+    background-color: var(--red);
+    justify-content: space-around;
+}
+
 #likesTitle {
-  width: 100%;
-  color: white;
-  font-size: 1.5rem;
-  text-align: center;
+    height: 85%;
+    width: 40%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 700;
+
 }
 
 #likes {
+    height: 85%;
+    width: 40%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 700;
 
 }
 
-/***THE ACTION BOX AND NAVBAR CONTAINER***/
-#bottomHalf{
-  height: 12.5rem;
-  width: 100%;
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
-  background-color: var(--background);
+/*------------------------------------------------------*/
+/*The Like, Favorite and Comment Button*/
+/*------------------------------------------------------*/
+#bottomHalf {
+    height: 12.5rem;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    background-color: var(--dark2);
 }
 
-/***THE ACTION BOX***/
-#actionBox{
-  height: 5.5rem;
-  width: 100%;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-  background-color: var(--level1);
-  justify-content: space-evenly;
-}
-#like{
-  height: 85%;
-  width: 30%;
-  background-color: var(--extra);
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-#favorite{
-  height: 85%;
-  width: 30%;
-  background-color: var(--favorite);
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 500;
-}
-#comment{
-  height: 85%;
-  width: 30%;
-  background-color: var(--create);
-  border: none;
-  font-size: 1.3rem;
-  font-weight: 500;
+#actionBox {
+    height: 5.5rem;
+    width: 100%;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    background-color: var(--dark1);
+
 }
 
+#buttonContain {
+    width: 97.5%;
+    height: 85%;
+    justify-content: space-around;
+    background-color: var(--red);
+}
+
+#like {
+    height: 85%;
+    width: 30%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+#favorite {
+    height: 85%;
+    width: 30%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+#comment {
+    height: 85%;
+    width: 30%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+#likeIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+}
+
+#commentIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+}
+
+#favoriteIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+}
+
+/*-----------------------------*/
+/**The Navbar at the botton***/
 /*----------------------------*/
-/*Sticky footer for the navbar*/
+
 footer {
-  height: 12.5%;
-  width: 100%;
-  background-color: var(--dark1);
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
+    height: 5.5rem;
+    width: 100%;
+    background-color: var(--dark1);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
+    z-index: 999;
 }
 
-/*The navbar*/
+
 nav {
-  background-color: var(--red);
-  height: 80%;
-  width: 97.5%;
-  position: relative;
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
 }
 
-/*The so that multiple buttons can be on the same row*/
+
 #homeContain {
-  display: inline;
+    display: inline;
 }
-/*The home button*/
+
 #home {
-  height: 85%;
-  width: 35%;
-  background-color: var(--light2);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  transform: translate(0, -50%);
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 100;
 }
-/*The home button icon*/
+
 #homeIcon {
-  font-size: 3rem;
-  color: var(--dark2);
-  margin: 0;
-  padding: 0;
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
 }
 
-/*The so that multiple buttons can be on the same row*/
+
 #backContain {
-  display: inline;
+    display: inline;
 }
-/*The back button */
+
 #back {
-  height: 85%;
-  width: 35%;
-  background-color: var(--light2);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
-  position: absolute;
-  right: 5%;
-  top: 50%;
-  transform: translate(0, -50%);
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
 }
-/*The back button icon*/
+
 #backIcon {
-  font-size: 3rem;
-  color: var(--dark2);
-  margin: 0;
-  padding: 0;
-  transform: scaleX(-1);
-}
-
-/***ICONS***/
-.material-icons {
-  font-size: 70px;
-  color: #000000;
-}
-
-#home {
-  float: left;
-  color: var(--orange);
-}
-
-
-.md-light {
-  color: var(--orange);
-}
-
-* a:active {
-  background-color: var(--level1);
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+    transform: scaleX(-1);
 }

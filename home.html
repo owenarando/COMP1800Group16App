@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>My BCIT Project</title>
-    <meta name="comp1800 Group 16 Web Application" content="NlightN">
-    <meta name="author" content="Group16">
+    <meta name="comp1800 WebApp NlightN" content="home">
+    <meta name="author" content="Team16">
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -32,9 +32,23 @@
                 <h1><span class="n">N</span>LIGHT<span class="n">N</span></h1>
             </header>
 
-            <button id="gearContain" class="object centerFlex">
+            <button id="gearContain" class="object centerFlex menuButton">
                 <i id="gear" class="material-icons">settings</i>
             </button>
+        </div>
+
+        <!----------------------------------------------->
+        <!-- The Settings Menu Popup-->
+        <!----------------------------------------------->
+        <div id="settings" class="object">
+            <button class="popUpButtons buttonText" id="logout">Log Out</button>
+        </div>
+        <div id="confirmLog">
+            <div id="confirmText">
+                <h2>Confirm Logout?</h2>
+            </div>
+            <button id="no" class="popUpButtonsYN buttonText">No</button>
+            <button id="yes" class="popUpButtonsYN buttonText">Yes</button>
         </div>
 
         <!----------------------------------------------->
@@ -77,7 +91,9 @@
     <!--------------------------------------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scripts/home.js"></script>
+    <script src="scripts/settingsMenu.js"></script>
     <script src="scripts/clickButtonEffect.js"></script>
+    
 
 </body>
 

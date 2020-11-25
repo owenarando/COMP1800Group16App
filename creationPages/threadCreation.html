@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="comp1800 WebApp NlightN" content="comment creation page">
+    <meta name="author" content="Team16">
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -18,7 +18,9 @@
 </head>
 
 <body>
-    <!-- ***THE CONTENT BOX*** -->
+    <!----------------------------------------------->
+    <!-- The Content Box -->
+    <!----------------------------------------------->
     <div id="content" class="hidden">
 
         <!----------------------------------------------->
@@ -27,7 +29,7 @@
         <div id="upperBox">
             <div id="titleWrap">
                 <header id="title" class="object centerFlex">
-                    <h1>Create a Thread</h1>
+                    <h1 id="titleText">Create a Thread</h1>
                 </header>
             </div>
             <div id="settingsWrap">
@@ -37,7 +39,9 @@
             </div>
         </div>
 
-        <!-- ***THE POPUP BUTTONS FROM COG BUTTON*** -->
+        <!----------------------------------------------->
+        <!-- The Settings Menu Popup-->
+        <!----------------------------------------------->
         <div id="settings" class="object">
             <button class="popUpButtons buttonText" id="logout">Log Out</button>
         </div>
@@ -49,38 +53,46 @@
             <button id="yes" class="popUpButtonsYN buttonText">Yes</button>
         </div>
 
+        <!----------------------------------------------->
+        <!-- The Form-->
+        <!----------------------------------------------->
         <form class="object">
-            <input id="inputTitle" class="object centerPosition textInput" type="text" placeholder="TITLE"></input>
+
+            <input id="inputTitle" maxlength="18" class="object centerPosition textInput" type="text"
+                placeholder="TITLE"></input>
             <textarea id="inputBody" class="object centerPosition textInput" placeholder="DESCRIPTION"></textarea>
         </form>
 
-        <!-- ***THE ACTION BOX*** -->
+        <!----------------------------------------------->
+        <!-- Create or Cancel Buttons-->
+        <!----------------------------------------------->
         <section id="actionBox" class="object centerFlex">
-            <!-- Header Navigation Bar -->
             <div id="actionButtonWrap" class="object">
                 <div id="createContain">
-                    <button id="create" class="object centerFlex">
+                    <button id="create" class="object centerFlex reactiveBtn">
                         <i id="createIcon" class="material-icons">check_circle</i>
                     </button>
                 </div>
                 <div id="cancelContain">
-                    <button id="cancel" class="object centerFlex">
+                    <button id="cancel" class="object centerFlex reactiveBtn">
                         <i id="cancelIcon" class="material-icons">cancel</i>
                     </button>
                 </div>
             </div>
         </section>
 
+        <!----------------------------------------------->
+        <!-- The NavBar at the bottom-->
+        <!----------------------------------------------->
         <footer class="object centerFlex">
-            <!-- Header Navigation Bar -->
             <nav class="object">
                 <div id="homeContain">
-                    <button id="home" class="object centerFlex">
+                    <button id="home" class="object centerFlex reactiveBtn">
                         <i id="homeIcon" class="material-icons">home</i>
                     </button>
                 </div>
                 <div id="backContain">
-                    <button id="back" class="object centerFlex">
+                    <button id="back" class="object centerFlex reactiveBtn">
                         <i id="backIcon" class="material-icons">forward</i>
                     </button>
                 </div>
@@ -118,7 +130,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
         integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <script src="/COMP1800Group16App/scripts/threadCreation.js"></script>
-    <script src="/COMP1800Group16App/scripts/buttons.js"></script>
+    <script src="/COMP1800Group16App/scripts/settingsMenu.js"></script>
     <script src="/COMP1800Group16App/scripts/clickButtonEffect.js"></script>
 
 

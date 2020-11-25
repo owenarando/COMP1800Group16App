@@ -56,34 +56,23 @@ function createPost() {
 
         //Grabbing the input fields.
         let name = document.getElementById("inputTitle");
-        let body = document.getElementById("inputBody");
+       
         //Booleans for the input field checks.
         let titlePass = false;
-        let bodyPass = false;
 
         //Changes the input background to show invalid input and throws a window error
         //if requirements not met.
         if (name.value === '') {
-            window.alert("Title cannot be empty");
             name.style.backgroundColor = "var(--error)";
         } else {
             titlePass = true;
             name.style.backgroundColor = "var(--input)"
         }
 
-        //Changes the input background to show invalid input and throws a window error
-        //if requirements not met.
-        if (body.value === '' || body.value.length < 20) {
-            window.alert("body must be atleast 20 characters");
-            body.style.backgroundColor = "var(--error)";
-        } else {
-            bodyPass = true;
-            body.style.backgroundColor = "var(--input)"
-        }
-
+    
         //If the requirements are met, calls the writeToDataBase() function
         //then redirects to group page.
-        if (titlePass && bodyPass) {
+        if (titlePass) {
             writeToDatabse();
             setTimeout(function () {
                 document.location.href = "/COMP1800Group16App/thread.html";
@@ -135,6 +124,16 @@ function start() {
         }
     })
 }
+
+
+//---------------------------------------------------
+// Home Button
+//----------------------------------------------------
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "/COMP1800Group16App/home.html";
+});
 
 //---------------------------------------------------
 // Back Button, will re-direct to thread from post creation page.

@@ -42,11 +42,3 @@ yes.addEventListener('click', (e) => {
   });
 });
 
-//---------------------------------------------------
-// Home Button
-//----------------------------------------------------
-const home = document.getElementById("home")
-home.addEventListener('click', (e) => {
-  e.preventDefault();
-  document.location.href = "/COMP1800Group16App/home.html";
-})

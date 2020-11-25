@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <title>My BCIT Project</title>
-    <meta name="comp1800 boilerplate code" content="my bcit project">
-    <meta name="author" content="BCIT">
+    <meta name="comp1800 WebApp NlightN" content="post page">
+    <meta name="author" content="Team16">
     <!-- Bootstrap for Mobile-first, and JQuery -->
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -22,37 +22,25 @@
     <!-- ***THE CONTENT BOX*** -->
     <div id="content" class="hidden">
 
-       <!----------------------------------------------->
+        <!----------------------------------------------->
         <!-- The Title and the Settings-->
         <!----------------------------------------------->
-<<<<<<< HEAD
-        <div id="upperSticky">
-            <div id="upperBox">
+        <div id="upperBox">
+            <div id="titleWrap">
                 <header id="title" class="object centerFlex">
-                    <h1>GROUP TITLE</h1>
+                    <h1 id="titleText">GROUP TITLE</h1>
                 </header>
-
+            </div>
+            <div id="settingsWrap">
                 <button id="gearContain" class="object centerFlex">
                     <i id="gear" class="material-icons">settings</i>
                 </button>
             </div>
-=======
-        <div id = "upperSticky">
-        <div id="upperBox">
-            <div id="titleWrap">
-                <header id="title" class="object centerFlex">
-                    <h1>GROUP TITLE</h1>
-                </header>
-            </div>
-            <div id="settingsWrap">
-            <button id="gearContain" class="object centerFlex">
-                <i id="gear" class="material-icons">settings</i>
-            </button>
-        </div>
->>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
         </div>
 
-        <!-- ***THE POPUP BUTTONS FROM COG BUTTON*** -->
+        <!----------------------------------------------->
+        <!-- The Settings Menu Popup-->
+        <!----------------------------------------------->
         <div id="settings" class="object">
             <button class="popUpButtons buttonText" id="logout">Log Out</button>
         </div>
@@ -64,7 +52,9 @@
             <button id="yes" class="popUpButtonsYN buttonText">Yes</button>
         </div>
 
-
+        <!----------------------------------------------->
+        <!-- The Post It-->
+        <!----------------------------------------------->
         <section id="post" class="object">
             <div id="postTitleContain" class="object centerPosition centerFlex textInput">
                 <p id="postTitle">Firebase UI</p>
@@ -80,13 +70,13 @@
             <!-- ***THE ACTION BOX*** -->
             <section id="actionBox" class="centerFlex object">
                 <div id="buttonContain" class="object centerFlex">
-                    <button id="comment" class="object centerFlex">
+                    <button id="comment" class="object centerFlex reactiveBtn">
                         <i id="commentIcon" class="material-icons">add_comment</i>
                     </button>
-                    <button onclick="favouriteToggle()" id="favorite" class="object centerFlex">
+                    <button id="favorite" class="object centerFlex toggleBtn">
                         <i id="favoriteIcon" class="material-icons">favorite</i>
                     </button>
-                    <button onclick="likeToggle()" id="like" class="object centerFlex">
+                    <button id="like" class="object centerFlex toggleBtn">
                         <i id="likeIcon" class="material-icons">thumb_up</i>
                     </button>
                 </div>
@@ -94,36 +84,19 @@
 
             <!-- ***THE NAVBAR*** -->
             <footer class="object centerFlex">
-<<<<<<< HEAD
-                <!-- Header Navigation Bar -->
-                <nav class="object">
-                    <div id="homeContain">
-                        <button id="home" class="object centerFlex">
-                            <i id="homeIcon" class="material-icons">home</i>
-                        </button>
-                    </div>
-                    <div id="backContain">
-                        <button id="back" class="object centerFlex">
-                            <i id="backIcon" class="material-icons">forward</i>
-                        </button>
-                    </div>
-
-                </nav>
-=======
             <!-- Header Navigation Bar -->
             <nav class="object">
                 <div id="homeContain">
-                    <button id="home" class="object centerFlex">
+                    <button id="home" class="object centerFlex reactiveBtn">
                         <i id="homeIcon" class="material-icons">home</i>
                     </button>
                 </div>
                 <div id="backContain">
-                    <button id="back" class="object centerFlex">
+                    <button id="back" class="object centerFlex reactiveBtn">
                         <i id="backIcon" class="material-icons">forward</i>
                     </button>
                 </div>
             </nav>
->>>>>>> 33002983d0f3b193521dda014e03f4f8a7bffa3c
             </footer>
         </div>
 
@@ -135,29 +108,7 @@
                     <div id=likes class="object centerFlex">7</div>
                 </div>
             </div>
-            <!-- 
-      <div class="object commentContain centerFlex">
-        <p class="comment">COMMENT</p>
-      </div>
-
-      <div class="object commentContain centerFlex">
-        <p class="comment">COMMENT</p>
-      </div>
-
-      <div class="object commentContain centerFlex">
-        <p class="comment">
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's standard dummy
-          text ever since the 1500s, when an unknown printer took a galley of type
-        </p>
-      </div>
-
-      <div class="object commentContain centerFlex">
-        <p class="comment">COMMENT</p>
-      </div>
-      */
-    </section>
-    -->
+     
     </div>
 
     <!----------------------------------------------->
@@ -184,10 +135,9 @@
     <!--------------------------------------------------------------------->
     <script src="scripts/firebaseApi.js"></script>
     <script src="scripts/post.js"></script>
-    <!-- <script src="scripts/clickButtonEffect.js"></script> -->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="scripts/buttons.js"></script>
+    <script src="scripts/settingsMenu.js"></script>
+    <script src="scripts/clickButtonEffect.js"></script>
 
 </body>
 

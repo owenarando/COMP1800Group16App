@@ -52,37 +52,26 @@ function createThread() {
 
     //Grabbing the input fields.
     let name = document.getElementById("inputTitle");
-    let description = document.getElementById("inputBody");
+
     //Booleans for the input field checks.
     let titlePass = false;
-    let descriptionPass = false;
 
     //Changes the input background to show invalid input and throws a window error
     //if requirements not met.
     if (name.value === '') {
-      window.alert("Title cannot be empty");
       name.style.backgroundColor = "var(--error)";
     } else {
       titlePass = true;
       name.style.backgroundColor = "var(--input)"
     }
 
-    //Changes the input background to show invalid input and throws a window error
-    //if requirements not met.
-    if (description.value === '' || description.value.length < 20) {
-      window.alert("Description must be atleast 20 characters");
-      description.style.backgroundColor = "var(--error)";
-    } else {
-      descriptionPass = true;
-      description.style.backgroundColor = "var(--input)"
-    }
-
     //If the requirements are met, calls the writeToDataBase() function
     //then redirects to group page.
-    if (titlePass && descriptionPass) {
+    if (titlePass) {
+        console.log("Writing to the databse");
       writeToDatabase();
       setTimeout(function () {
-        document.location.href = "/COMP1800Group16App/group.html";
+      document.location.href = "/COMP1800Group16App/group.html";
       }, 1000);
     }
   });
@@ -132,6 +121,17 @@ function start() {
     }
   })
 }
+
+
+//---------------------------------------------------
+// Home Button
+//----------------------------------------------------
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "/COMP1800Group16App/home.html";
+});
+
 
 //---------------------------------------------------
 // Back Button, will re-direct to group from thread creation page.

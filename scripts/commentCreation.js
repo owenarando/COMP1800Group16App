@@ -122,15 +122,24 @@ function start() {
   })
 }
 
+
 //---------------------------------------------------
-// Back Button, will re-direct to post from comment creation page
+// Home Button
 //----------------------------------------------------
-/*
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "/COMP1800Group16App/home.html";
+});
+
+//---------------------------------------------------
+// Back Button, will re-direct to thread from post creation page.
+//----------------------------------------------------
 const backBtn = document.getElementById("back");
 backBtn.addEventListener('click', () => {
-  document.location.href = "/COMP1800Group16App/post.html";
+  document.location.href = "/COMP1800Group16App/thread.html";
 })
-*/
+
 start();
 createComment();
 cancel();

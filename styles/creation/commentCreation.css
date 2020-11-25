@@ -1,121 +1,323 @@
 @import url(https://fonts.googleapis.com/css?family=Hind);
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
-body{
-  background-color: var(--background);
+
+body {
+    background-color: var(--dark2);
 }
-/***THE CONTENT BOX***/
+
+/*------------------------------------------------------*/
+/*The Context Box*/
+/*------------------------------------------------------*/
 #content {
-  height: 100vh;
-  background: var(--background);
-  width: 100vw;
+    height: 100vh;
+    background: var(--dark2);
+    width: 100vw;
 }
 
 
 
 
-/***CLASSES WITH MULTIPLE ELEMENTS***/
-.object{
-  border-radius: 0.25rem;
-  box-shadow: 0 0 8px  #000000;
+
+/*------------------------------------------------------*/
+/*Aligning and Centering Text Inputs*/
+/*------------------------------------------------------*/
+.centerPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-/*FLEXBOX FOR ALIGNING/CENTERING CHILDREN*/
-.centerFlex{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/*ALIGNING/CENTERING TEXT INPUTS*/
-.centerPosition{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
 /*TEXT INPUT TEXT PROPERTIIES*/
-.textInput{
-  text-align: center;
-  font-size: 2rem;
-}
-
-/***THE TITLE BOX***/
-#pageTitle {
-  width: 100%;
-  height: 8%;
-  background-color: var(--level1);
-}
-h1 {
-  font-size: 100%;
-  color: white;
-  font-size: 3rem;
-}
-
-
-/***THE FORM***/
-form{
-  background-color: var(--level1);
-  width: 100%;
-  height: 60%;
-  margin-top:2vh;
-  margin-bottom:2vh;
-  position: relative;
-}
-#inputBody{
-  width: 97.5%;
-  height: 95%;
-  resize: none;
-  top: 50%;
-  background-color: var(--level1);
-  border: none;
-  color:white;
+.textInput {
+    text-align: center;
+    font-size: 1.8rem;
 }
 
 
 
 
-/***THE ACTION BOX***/
-#actionBox{
-  height: 12%;
-  width: 100%;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  background-color: var(--level1);
-  justify-content: space-around;
-}
-#create{
-  height: 85%;
-  width: 45%;
-  background-color: var(--create);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
-  color: #000000;
-}
-#cancel{
-  height: 85%;
-  width: 45%;
-  background-color: var(--remove);
-  border: none;
-  font-size: 3rem;
-  font-weight: 500;
+/*------------------------------------------------------*/
+/*The Title and the Settings*/
+/*------------------------------------------------------*/
+/*The Title*/
+#upperBox {
+    height: 8%;
+    width: 100%;
+    position: relative;
+    background-color: var(--red);
 }
 
+#title {
+    width: calc(82%);
+    height: 90%;
+    background-color: var(--light1);
+    position: absolute;
+    left: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#titleText {
+    margin: 0;
+    padding: 0;
+    color: var(--dark2);
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: var(--title);
+}
+
+/*The Settings Button */
+#settingsWrap {
+    display: inline-block;
+}
+
+#gearContain {
+    width: 15%;
+    height: 95%;
+    background-color: var(--red);
+    position: absolute;
+    right: 1%;
+    top: 50%;
+    transform: translate(0, -50%);
+    border: none;
+}
+
+#gear {
+    font-size: 3rem;
+    color: var(--light2);
+    margin: 0;
+    padding: 0;
+}
+
+/*------------------------------------------------------*/
+/*The Settings PopUp Menu*/
+/*------------------------------------------------------*/
+#settings {
+    background-color: var(--dark2);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px #000000;
+    height: 80vh;
+    width: 90vw;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1000;
+}
+
+.popUpButtons {
+    width: 95%;
+    height: 10%;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    background-color: var(--light2);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--dark2);
+    font-size: 2rem;
+    font-family: var(--body);
+}
+
+/*  Confirm Logout With Yes/No buttons */
+.popUpButtonsYN {
+    width: 45%;
+    margin-top: 10px;
+    margin-left: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: var(--light2);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--dark2);
+    font-family: var(--body);
+    font-size: 2rem;
+}
+
+#confirmLog {
+    display: inline-block;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 8px #000000;
+    width: 80vw;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 1000;
+}
+
+#confirmText h2 {
+    color: var(--light2);
+    font-family: var(--body);
+}
+
+#confirmText {
+    display: flex;
+    justify-content: center;
+}
+
+
+/*------------------------------------------------------*/
+/*The Form*/
+/*------------------------------------------------------*/
+form {
+    background-color: var(--dark1);
+    width: 100%;
+    height: 62.5%;
+    margin-top: 2vh;
+    position: relative;
+}
+
+#inputBody {
+    width: 97.5%;
+    height: 95%;
+    resize: none;
+    top: 50%;
+    background-color: var(--level1);
+    border: none;
+    color: var(--light1);
+    font-family: var(--body);
+}
+
+/*------------------------------------------------------*/
+/*The Create or Cancel Buttons*/
+/*------------------------------------------------------*/
+#actionBox {
+    height: 12%;
+    width: 100%;
+    margin-top: 1.5vh;
+    margin-bottom: 2vh;
+    background-color: var(--dark1);
+}
+
+#actionButtonWrap {
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
+}
+
+#createontain {
+    display: inline;
+}
+
+#create {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#createIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
+
+
+#cancelContain {
+    display: inline;
+}
+
+#cancel {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#cancelIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
 
 
 
-/***THE NAVBAR***/
+/*-----------------------------*/
+/**The Navbar at the botton***/
+/*----------------------------*/
+
 footer {
-  height: 14%;
-  width: 100%;
-  background-color: var(--level1);
-  bottom: 0px;
-  left: 0px;
-  position: fixed;
+    height: 12.5%;
+    width: 100%;
+    background-color: var(--dark1);
+    bottom: 0px;
+    left: 0px;
+    position: fixed;
 }
+
 nav {
-  height: 75%;
-  width: 97.5%;
+    background-color: var(--red);
+    height: 80%;
+    width: 97.5%;
+    position: relative;
+}
+
+
+#homeContain {
+    display: inline;
+}
+
+#home {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#homeIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+}
+
+
+#backContain {
+    display: inline;
+}
+
+#back {
+    height: 85%;
+    width: 35%;
+    background-color: var(--light2);
+    border: none;
+    font-size: 3rem;
+    font-weight: 500;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+#backIcon {
+    font-size: 3rem;
+    color: var(--dark2);
+    margin: 0;
+    padding: 0;
+    transform: scaleX(-1);
 }

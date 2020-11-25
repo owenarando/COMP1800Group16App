@@ -3,7 +3,6 @@
 // Runs the other functions to create the page
 //----------------------------------------------------
 function createPage() {
-
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       db.collection("users").doc(user.uid).collection("current")
@@ -102,6 +101,7 @@ function addThreads(currentGroupID) {
         item = document.createElement("button");
         item.className = "gridItem";
         item.className += " object";
+        item.className += " reactiveBtn";
 
         //Assigns the id of the thread to the html ID
         item.id = `${threadID}`;
@@ -109,6 +109,13 @@ function addThreads(currentGroupID) {
 
         //When the user clicks on the button it calls enterThread
         //and enters its html Id as the parameter
+        //it also changes the buttons color
+        $(item).on('click', () =>{
+            $(event.currentTarget).css({
+                "background-color": "var(--dark2)",
+                "color": "var(--light2)"
+            });
+        })
         item.setAttribute("onclick", "enterThread(this.id)");
         $("#middleContent").prepend(item);
       });
@@ -145,6 +152,16 @@ function start() {
     }
   })
 }
+
+//---------------------------------------------------
+// Home Button
+//----------------------------------------------------
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "/COMP1800Group16App/home.html";
+});
+
 
 //---------------------------------------------------
 // Back Button, will re-direct to home from group page

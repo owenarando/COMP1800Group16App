@@ -136,6 +136,12 @@ function addPosts(groupIdInput, threadIdInput) {
         //Gives the buttons added a click event, when clicked it 
         //calls the enterPost() method that uses the current postID as 
         //a parameter.
+        $(item).on('click', () =>{
+            $(event.currentTarget).css({
+                "background-color": "var(--dark2)",
+                "color": "var(--light2)"
+            });
+        })
         item.setAttribute("onclick", "enterPost(this.id)");
         $("#middleContent").prepend(item);
       });
@@ -174,6 +180,16 @@ function start() {
     }
   })
 }
+
+
+//---------------------------------------------------
+// Home Button
+//----------------------------------------------------
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "/COMP1800Group16App/home.html";
+});
 
 //---------------------------------------------------
 // Back Button, will re-direct to group from thread page
