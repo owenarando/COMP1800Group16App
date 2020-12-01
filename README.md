@@ -1,4 +1,4 @@
-# COMP1800Group16App## My Web Application (NlightN)
+# COMP1800Group16App (NlightN)
 
 * [General info](#general-info)
 * [Members](#Team-16-Members)
