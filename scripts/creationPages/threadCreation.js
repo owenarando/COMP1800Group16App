@@ -71,7 +71,7 @@ function createThread() {
         console.log("Writing to the databse");
       writeToDatabase();
       setTimeout(function () {
-      document.location.href = "/COMP1800Group16App/group.html";
+      document.location.href = "../group.html";
       }, 1000);
     }
   });
@@ -88,7 +88,7 @@ function cancel() {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         console.log("CancelButton Added");
-        document.location.href = "/COMP1800Group16App/group.html";
+        document.location.href = "../group.html";
       } else {
         console.log("no user is signed in");
       }
@@ -117,7 +117,7 @@ function start() {
       createPage();
     } else {
       console.log("No user signed in, loading login page");
-      document.location.href = "/COMP1800Group16App/index.html"
+      document.location.href = "../index.html"
     }
   })
 }
@@ -129,7 +129,7 @@ function start() {
 const home = document.getElementById("home")
 home.addEventListener('click', (e) => {
   e.preventDefault();
-  document.location.href = "/COMP1800Group16App/home.html";
+  document.location.href = "../home.html";
 });
 
 
@@ -138,7 +138,7 @@ home.addEventListener('click', (e) => {
 //----------------------------------------------------
 const backBtn = document.getElementById("back");
 backBtn.addEventListener('click', () => {
-  document.location.href = "/COMP1800Group16App/group.html";
+  document.location.href = "../group.html";
 })
 
 start();

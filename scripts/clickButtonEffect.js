@@ -22,9 +22,9 @@ function settingsEffects(){
     });
 }
 
-function navBarEffects(){
+function desktopEffects(){
     $(document).ready(function () {
-        $(".reactiveBtn").on('click', () =>{
+        $(".reactiveBtn").mousedown(function(){
             $(event.currentTarget).css({
                 "background-color": "var(--dark2)",
             });
@@ -32,11 +32,44 @@ function navBarEffects(){
                 "color": "var(--light2)",
             });
         });
-
+        
+        $(".reactiveBtn").mouseup(function(){
+            $(event.currentTarget).css({
+                "background-color": "var(--light2)",
+            });
+            $(event.currentTarget).children().css({
+                "color": "var(--dark2)",
+            });
+        });
        
         
     });
 }
 
-navBarEffects();
+function mobileEffects(){
+    $(document).ready(function () {
+        $(".reactiveBtn").on("touchstart", function(e){
+            $(event.currentTarget).css({
+                "background-color": "var(--dark2)",
+            });
+            $(event.currentTarget).children().css({
+                "color": "var(--light2)",
+            });
+        });
+        
+        $(".reactiveBtn").on("touchend", function(e){
+            $(event.currentTarget).css({
+                "background-color": "var(--light2)",
+            });
+            $(event.currentTarget).children().css({
+                "color": "var(--dark2)",
+            });
+        });
+       
+        
+    });
+}
+
+mobileEffects();
+desktopEffects();
 settingsEffects();

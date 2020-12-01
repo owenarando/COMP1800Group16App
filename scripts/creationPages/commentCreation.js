@@ -66,7 +66,6 @@ function writeToDatabse() {
       //Changes the input background to show invalid input and throws a window error
       //if requirements not met.
       if (body.value === '') {
-        window.alert("comment cannot be empty");
         body.style.backgroundColor = "var(--error)";
       } else {
         bodyPass = true;
@@ -78,7 +77,7 @@ function writeToDatabse() {
       if (bodyPass) {
         writeToDatabse();
         setTimeout(function () {
-          document.location.href = "/COMP1800Group16App/post.html";
+          document.location.href = "../post.html";
         }, 1000);
       }
     });
@@ -95,7 +94,7 @@ function writeToDatabse() {
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
           console.log("CancelButton Added");
-          document.location.href = "/COMP1800Group16App/post.html";
+          document.location.href = "../post.html";
         } else {
           console.log("no user is signed in");
         }
@@ -124,20 +123,27 @@ function writeToDatabse() {
         createPage();
       } else {
         console.log("No user signed in, loading login page");
-        document.location.href = "/COMP1800Group16App/index.html"
+        document.location.href = "../index.html"
       }
     })
   }
   
-  //---------------------------------------------------
-  // Back Button, will re-direct to post from comment creation page
-  //----------------------------------------------------
-  /*
-  const backBtn = document.getElementById("back");
-  backBtn.addEventListener('click', () => {
-    document.location.href = "/COMP1800Group16App/post.html";
-  })
-  */
+ //---------------------------------------------------
+// Home Button
+//----------------------------------------------------
+const home = document.getElementById("home")
+home.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.location.href = "../home.html";
+});
+
+//---------------------------------------------------
+// Back Button, will re-direct to thread from post creation page.
+//----------------------------------------------------
+const backBtn = document.getElementById("back");
+backBtn.addEventListener('click', () => {
+  document.location.href = "../post.html";
+})
   start();
   createComment();
   cancel();

@@ -127,7 +127,7 @@ function addThreads(currentGroupID) {
 // Adds Redirect to creation page on button press
 //----------------------------------------------------
 function creationPage(){
-  document.location.href = "/COMP1800Group16App/creationPages/threadCreation.html";
+  document.location.href = "creationPages/threadCreation.html";
 }
 
 const create = document.querySelector("#create");
@@ -159,7 +159,7 @@ function start() {
 const home = document.getElementById("home")
 home.addEventListener('click', (e) => {
   e.preventDefault();
-  document.location.href = "/COMP1800Group16App/home.html";
+  document.location.href = "home.html";
 });
 
 

@@ -115,7 +115,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
 
     //Navigating to the comments for a certain post.
     db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput)
-        .collection("post").doc(postIdInput).collection("comment").orderBy("time", "desc")
+        .collection("post").doc(postIdInput).collection("comment").orderBy("time")
         .get()
         .then((snap) => {
             snap.forEach((doc) => {
@@ -149,7 +149,7 @@ function addComments(groupIdInput, threadIdInput, postIdInput) {
 // Adds Redirect to comment creation page.
 //----------------------------------------------------
 function creationPage() {
-    document.location.href = "/COMP1800Group16App/creationPages/commentCreation.html";
+    document.location.href = "creationPages/commentCreation.html";
 }
 
 //Variable that stores the comment button.
@@ -221,6 +221,8 @@ favoriteButton.addEventListener('click', function () {
 function likePost() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+
+            //Gets the users current pages
             db.collection("users").doc(user.uid).collection("current")
                 .doc("currentPages")
                 .get()
@@ -229,10 +231,12 @@ function likePost() {
                     let currentGroupID = doc.data().currentGroup;
                     let currentThreadID = doc.data().currentThread;
 
+                    //Checks iof the user has liked the post or not
                     db.collection("users").doc(user.uid).collection("liked")
                         .doc(`${currentPostID}`)
                         .get()
                         .then(function (doc) {
+                            //If it does, decrememnt the like and remove it
                             if (doc.exists) {
                                 console.log("like exists");
                                 db.collection("users").doc(user.uid).collection("liked")
@@ -245,7 +249,7 @@ function likePost() {
                                             })
                                         console.log("like removed");
                                     })
-
+                                //If it doesnt, add the like and icrement the post likes
                             } else {
                                 console.log("like does not exist");
                                 db.collection("users").doc(user.uid).collection("liked")
@@ -277,9 +281,9 @@ like.addEventListener('click', function () {
     likePost();
 });
 
-/////////////////////////////////////////////////////////////
-//////// Initialize Like Button style base on Liked/not ///////
-/////////////////////////////////////////////////////////////
+//---------------------------------------------------
+// Intitialzue the like button, wheter the user has liked the post or not
+//----------------------------------------------------
 /* Check if user "liked" the post, "likeButton" syle change base on T/F */
 function likeButton() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -318,21 +322,28 @@ function likeButton() {
 }
 likeButton();
 
-/////////////////////////////////////////////////
-///////////////Toggle Like button//////////////
-/////////////////////////////////////////////////
+//---------------------------------------------------
+// Toggles the like button
+//----------------------------------------------------
 function likeToggle() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+            
+            //Reads from the database to check what the users current pages are.
             db.collection("users").doc(user.uid).collection("current")
                 .doc("currentPages")
                 .get()
                 .then(function (doc) {
+
+                    //Gets the ID of he current post and checks if the user liked it or not
                     let currentPostID = doc.data().currentPost;
                     db.collection("users").doc(user.uid).collection("liked")
                         .doc(`${currentPostID}`)
                         .get()
                         .then(function (doc) {
+
+                            //changes the styling of the button depending on whether the user
+                            //liked the post
                             if (doc.exists) {
                                 var likeButton = document.getElementById("like");
                                 $(likeButton).children("i").css({
@@ -356,9 +367,9 @@ function likeToggle() {
     });
 }
 
-/////////////////////////////////////////////////////////////
-//////// Initialize Favourite Button style  ///////
-/////////////////////////////////////////////////////////////
+//---------------------------------------------------
+// Initializes the favorite button
+//----------------------------------------------------
 function favoriteBtn() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -368,11 +379,14 @@ function favoriteBtn() {
                 .get()
                 .then(function (doc) {
                     let currentPostID = doc.data().currentPost;
+
                     //Checks if the item is already in the favorites
                     db.collection("users").doc(user.uid).collection("favorites")
                         .doc(`${currentPostID}`)
                         .get()
                         .then(function (doc) {
+
+                            //changes the styling based on if the item is already favorited
                             if (doc.exists) {
                                 var fav = document.getElementById("favorite");
                                 $(fav).children("i").css({
@@ -397,9 +411,9 @@ function favoriteBtn() {
 }
 favoriteBtn();
 
-/////////////////////////////////////////////////
-///////////////Toggle favorite button//////////////
-/////////////////////////////////////////////////
+//---------------------------------------------------
+// Toggles the favorite button
+//----------------------------------------------------
 function favouriteToggle() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -460,7 +474,7 @@ function start() {
 const home = document.getElementById("home")
 home.addEventListener('click', (e) => {
     e.preventDefault();
-    document.location.href = "/COMP1800Group16App/home.html";
+    document.location.href = "home.html";
 });
 //---------------------------------------------------
 // Back Button, will re-direct to threads from posts page

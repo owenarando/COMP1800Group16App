@@ -112,7 +112,7 @@ function addPosts(groupIdInput, threadIdInput) {
 
   ////Navigating to the post.
   db.collection("group").doc(groupIdInput).collection("thread").doc(threadIdInput).collection("post")
-    .orderBy("name", "desc")
+    .orderBy("likes")
     .get()
     .then((snap) => {
       snap.forEach((doc) => {
@@ -153,7 +153,7 @@ function addPosts(groupIdInput, threadIdInput) {
 // Adds Redirect to creation page on button press
 //----------------------------------------------------
 function creationPage() {
-  document.location.href = "/COMP1800Group16App/creationPages/postCreation.html";
+  document.location.href = "creationPages/postCreation.html";
 }
 
 //Variable that stores the create button, id of  "create".
@@ -188,7 +188,7 @@ function start() {
 const home = document.getElementById("home")
 home.addEventListener('click', (e) => {
   e.preventDefault();
-  document.location.href = "/COMP1800Group16App/home.html";
+  document.location.href = "home.html";
 });
 
 //---------------------------------------------------

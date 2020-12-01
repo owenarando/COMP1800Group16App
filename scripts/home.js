@@ -50,7 +50,7 @@ function enterGroup(groupID) {
         } else {
             //If there is no user logged in, bring them to the login
             console.log("no user is signed in");
-            document.location.href = "login2.html"
+            document.location.href = "index.html"
         }
     });
 }
@@ -172,5 +172,8 @@ function start() {
         }
     })
 }
-
+console.log("Version 1, fixed removed the alerts from the comment creation")
+console.log("Andfixed made all the creation filepaths ../")
+console.log("Version 2 Fixed the buttons for mobile with touchstart and touchend")
+console.log("Version 3 finished fixing up some comment, made sure content is orderdBY")
 start();

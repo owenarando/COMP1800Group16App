@@ -64,3 +64,4 @@ var uiConfig = {
 // The start method will wait until the DOM is loaded.
 // Inject the login interface into the HTML
 ui.start('#firebaseui-auth-container', uiConfig);
+
