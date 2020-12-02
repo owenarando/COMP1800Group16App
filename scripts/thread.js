@@ -1,4 +1,6 @@
 //---------------------------------------------------
+//  **** READING DATA ****
+//
 // Gets the thread ID from the database
 // Runs addPosts with the thread ID
 //----------------------------------------------------
@@ -35,6 +37,8 @@ function createPage() {
 };
 
 //---------------------------------------------------
+//  **** READING AND WRITING ****
+//
 // Brings the user to the thread they clicked on.
 // Accepts the postID as a paramter.
 //----------------------------------------------------
@@ -62,6 +66,8 @@ function enterPost(postID) {
 };
 
 //---------------------------------------------------
+//  **** READING DATA ****
+//
 // Adds the title to the thread.
 // Accepts the groupID and threadID as paramenters.
 //----------------------------------------------------
@@ -83,6 +89,8 @@ function addTitle(groupIdInput, threadIdInput) {
 };
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds the description to the thread.
 // Accepts the groupID and threadID  as paramenters.
 //----------------------------------------------------
@@ -104,6 +112,8 @@ function addDescription(groupIdInput, threadIdInput) {
 }
 
 //---------------------------------------------------
+// **** READING DATA AND ORDERING THE DATA BY LIKES ****
+//
 // Gets the post info from the database.
 // Creates post html and appends to the body.
 // Accepts groudID and threadID as parameters.

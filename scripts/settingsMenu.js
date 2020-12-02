@@ -32,6 +32,8 @@ $(document).ready(function () {
 const auth = firebase.auth();
 const yes = document.querySelector('#yes');
 
+// **** READING DATA ****
+//
 //Event listener on the Yes button in the confirmation logout,
 //when pressed the user will be loggerd out
 yes.addEventListener('click', (e) => {

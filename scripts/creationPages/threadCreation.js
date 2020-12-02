@@ -1,4 +1,6 @@
 //---------------------------------------------------------------
+// **** READING AND WRITING DATA ****
+//
 //This funciton takes user input from the
 //creating a thead page and writes the new info into the database.
 //---------------------------------------------------------------
@@ -40,6 +42,8 @@ function writeToDatabase() {
 }
 
 //---------------------------------------------------------------
+// **** USES THE writeToDataBase() function TO WRITE DATA ****
+//
 //This function adds an event listener on the create button in 
 //threadCreation.html. If any of the input fields are blank or 
 //less than the specified length an error will appear. If the input

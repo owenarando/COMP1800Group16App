@@ -1,5 +1,7 @@
 //---------------------------------------------------
-// Takes in the ID of a post. That same ID is also 
+// **** READING AND WRITING DATA ****
+//
+// Takes in the ID of a post. That same ID
 // then brings the user to the threadpage
 //----------------------------------------------------
 function enterFavorite(postIdInput) {
@@ -31,6 +33,8 @@ function enterFavorite(postIdInput) {
 }
 
 //---------------------------------------------------
+// **** READING AND WRITING DATA ****
+//
 // UPDATES .update() what group the user is currently in
 // Then loads group.htmL
 //----------------------------------------------------
@@ -56,6 +60,8 @@ function enterGroup(groupID) {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Creates Buttons For Each Group the user is part of 
 // READS from the database with .get()
 //----------------------------------------------------
@@ -96,6 +102,8 @@ function addGroups() {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Creates Buttons For Each Favorite the usr has
 // READS from the database with .get()
 //----------------------------------------------------

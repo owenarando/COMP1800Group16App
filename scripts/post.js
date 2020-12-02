@@ -1,4 +1,6 @@
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Gets the current users groups, threads and posts to display.
 //----------------------------------------------------
 function createPage() {
@@ -39,6 +41,8 @@ function createPage() {
 };
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds the title to the post.
 // Accepts the groupID and threadID and postID as paramenters.
 //----------------------------------------------------
@@ -61,6 +65,8 @@ function addTitle(groupIdInput, threadIdInput, postIdInput) {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds the body to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
@@ -84,6 +90,8 @@ function addBody(groupIdInput, threadIdInput, postIdInput) {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds likes to the post.
 // Accepts the groupID, threadID and postID as parameters.
 //----------------------------------------------------
@@ -107,6 +115,8 @@ function addLikes(groupIdInput, threadIdInput, postIdInput) {
 
 
 //---------------------------------------------------
+// **** READING AND ORDERING DATA ****
+//
 // Adds comments from the database for a certain post.
 // Creates comment html and appends to the body.
 // Accepts groudID, threadID and postID as parameters.
@@ -162,6 +172,8 @@ create.addEventListener('click', function () {
 });
 
 //---------------------------------------------------
+// **** READING, WRITING, AND DELETING DATA ****
+//
 // Adds to favorites when item is favorited
 //----------------------------------------------------
 function favorite() {
@@ -216,6 +228,8 @@ favoriteButton.addEventListener('click', function () {
 
 
 //---------------------------------------------------
+// **** READING, WRTIING AND DELETING DATA ****
+//
 // Adds a like to the post when the user likes it 
 //----------------------------------------------------
 function likePost() {
@@ -282,6 +296,8 @@ like.addEventListener('click', function () {
 });
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Intitialzue the like button, wheter the user has liked the post or not
 //----------------------------------------------------
 /* Check if user "liked" the post, "likeButton" syle change base on T/F */
@@ -323,6 +339,8 @@ function likeButton() {
 likeButton();
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Toggles the like button
 //----------------------------------------------------
 function likeToggle() {
@@ -368,6 +386,8 @@ function likeToggle() {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Initializes the favorite button
 //----------------------------------------------------
 function favoriteBtn() {
@@ -412,6 +432,8 @@ function favoriteBtn() {
 favoriteBtn();
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Toggles the favorite button
 //----------------------------------------------------
 function favouriteToggle() {
@@ -453,6 +475,8 @@ function favouriteToggle() {
 
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // When the page starts
 // getThreads()
 //----------------------------------------------------

@@ -1,4 +1,6 @@
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Gets the Group ID from user.current
 // Runs the other functions to create the page
 //----------------------------------------------------
@@ -27,6 +29,8 @@ function createPage() {
 };
 
 //---------------------------------------------------
+// **** READING AND WRITING DATA ****
+//
 // Puts the thread that the user selected on the database
 // then brings the user to the threadpage
 //----------------------------------------------------
@@ -49,6 +53,8 @@ function enterThread(threadID) {
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds the title
 //----------------------------------------------------
 function addTitle(currentGroupID){
@@ -65,6 +71,8 @@ function addTitle(currentGroupID){
 }
 
 //---------------------------------------------------
+// **** READING DATA ****
+//
 // Adds the description
 //----------------------------------------------------
 function addDescription(currentGroupID){
@@ -81,6 +89,8 @@ function addDescription(currentGroupID){
 }
 
 //---------------------------------------------------
+// **** READING AND ORDERING DATA ****
+//
 // Adds the threads
 //----------------------------------------------------
 function addThreads(currentGroupID) {
